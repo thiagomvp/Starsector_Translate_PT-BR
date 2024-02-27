@@ -638,7 +638,8 @@ $entity.relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""hostil $ship
 greetingDefaultHostileWeakerDefiant,OpenCommLink,"$entity.isHostile
 $entity.relativeStrength < 0
 $entity.weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"o inimigo $personRank parece sombrio mas desafiador. ""vamos lutar com voce ate o fim"" diz $heOrShe. 
-OR ""droga estamos em uma situacao dificil."" $PersonRank $personName de repente percebe que a linha esta aberta e a desliga.",cutCommLink:Cut the comm link,
+OR
+ ""droga estamos em uma situacao dificil."" $PersonRank $personName de repente percebe que a linha esta aberta e a desliga.",cutCommLink:Cut the comm link,
 greetingDefaultHostileStronger,OpenCommLink,"$entity.isHostile
 $entity.relativeStrength >= 0",EndConversation,parece que o inimigo $personRank nao parece sentir necessidade de falar com voce pois seus pedidos de comunicacao ficam sem resposta.,,
 greetingDefaultNeutral,OpenCommLink,$faction.neutralToPlayer,"$menuState = fleetConvMain 0
@@ -649,7 +650,8 @@ $faction.neutralToPlayer","AdjustRepActivePerson INHOSPITABLE -5
 $menuState = fleetConvMain 0
 FireAll PopulateOptions
 #$recognizedAsInfamous","""voce foi escaneado e"" $heOrShe pisca na tela $hisOrHer entao diz quase - mas nao completamente - baixinho ""$playerName. o acougueiro."" $HeOrShe endireita $hisOrHer de volta ""seria melhor se voce mantivesse distancia. nos nos estamos armados."" 
-OR conforme a comunicacao e resolvida $rank $personLastName olha para voce com reconhecimento e alarme. ""e... voce. as coisas que voce fez eu nao posso acreditar-"" $heOrShe limpa a garganta de $hisOrHer desconfortavelmente ""o que voce quer?""",,
+OR
+ conforme a comunicacao e resolvida $rank $personLastName olha para voce com reconhecimento e alarme. ""e... voce. as coisas que voce fez eu nao posso acreditar-"" $heOrShe limpa a garganta de $hisOrHer desconfortavelmente ""o que voce quer?""",,
 greetingDefaultInfamousFriendly,OpenCommLink,"$faction.friendlyToPlayer
 $player.atrocities > 1
 RollProbability 0.3 score:2","$menuState = fleetConvMain 0
@@ -659,38 +661,50 @@ FireAll PopulateOptions","""ah capitao $playerName."" $HeOrShe parece desconfort
 greetingHegemonyFriendly,OpenCommLink,"$faction.id == hegemony
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""acusando o recebimento de seus codigos passando para um canal seguro."" um piscar de um icone de fenix e estatica entao: ""sim? esta tudo bem eu confio? fico feliz em ouvir isso cidadao. cambio e fim."" 
-OR ""seu $shipOrFleet foi digitalizado e identificado esta tudo em ordem. queime bem cidadao."" 
-OR ""escaneado e identificado. voce esta voando lindamente cidadao. saltos limpos e queimadura alta."" $PersonRank $personName termina com um flash da fenix dourada.",,
+OR
+ ""seu $shipOrFleet foi digitalizado e identificado esta tudo em ordem. queime bem cidadao."" 
+OR
+ ""escaneado e identificado. voce esta voando lindamente cidadao. saltos limpos e queimadura alta."" $PersonRank $personName termina com um flash da fenix dourada.",,
 greetingHegemonyHostileWeaker,OpenCommLink,"$faction.id == hegemony
 $entity.isHostile
 $entity.relativeStrength < 0",$entity.ignorePlayerCommRequests = true 1,"""navio hostil esteja avisado a transmissao para a nave de patrulha do sistema ja foi despachada reforcos estao a caminho. e aconselhavel desligar os sistemas de armas e desengatar. cambio."" 
-OR ""contato beligerante! esteja ciente de que atirar em uma embarcacao da hegemonia e considerado um ato de insurreicao e voce sera cacado!"" a hegemonia $personRank esta suando. ""quando terminarem com voce voce sera vendido nos mercados negros em mundos do setor eu juro."" 
-OR ""damos nossas vidas pela restauracao do dominio e de toda a humanidade."" $HeOrShe faz uma pausa por um momento como se quisesse dizer mais alguma coisa depois desliga a comunicacao.",cutCommLink:Cut the comm link,
+OR
+ ""contato beligerante! esteja ciente de que atirar em uma embarcacao da hegemonia e considerado um ato de insurreicao e voce sera cacado!"" a hegemonia $personRank esta suando. ""quando terminarem com voce voce sera vendido nos mercados negros em mundos do setor eu juro."" 
+OR
+ ""damos nossas vidas pela restauracao do dominio e de toda a humanidade."" $HeOrShe faz uma pausa por um momento como se quisesse dizer mais alguma coisa depois desliga a comunicacao.",cutCommLink:Cut the comm link,
 greetingHegemonyHostileWeakerDefiant,OpenCommLink,"$faction.id == hegemony
 $entity.isHostile
 $entity.relativeStrength < 0
 $entity.weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"a hegemonia $personRank parece sombria mas desafiadora. ""vamos lutar com voce ate o fim"" diz $heOrShe. 
-OR ""lutamos e morremos pelo dominio; pela humanidade."" a linha de comunicacao e cortada.",cutCommLink:Cut the comm link,
+OR
+ ""lutamos e morremos pelo dominio; pela humanidade."" a linha de comunicacao e cortada.",cutCommLink:Cut the comm link,
 greetingHegemonyHostileStronger,OpenCommLink,"$faction.id == hegemony
 $entity.isHostile
 $entity.relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""pela autoridade do administrador do alto hegemon voce recebeu ordens de desligar as unidades do hiperespaco desativar as armas e se render. cambio."" 
-OR ""a resistencia a autoridade hegemonica e um ato de insurreicao e deve ser punida de acordo. renda-se agora ou sera enfrentado com forca.""",cutCommLink:Cut the comm link,
+OR
+ ""a resistencia a autoridade hegemonica e um ato de insurreicao e deve ser punida de acordo. renda-se agora ou sera enfrentado com forca.""",cutCommLink:Cut the comm link,
 greetingHegemonyNeutral,OpenCommLink,"$faction.id == hegemony
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""voce foi escaneado e identificado cidadao. se nada estiver errado iremos embora."" 
-OR a hegemonia $personRank parece impaciente. ""ha alguma emergencia a relatar? nao? entao continue cidadao.""",,
+OR
+ a hegemonia $personRank parece impaciente. ""ha alguma emergencia a relatar? nao? entao continue cidadao.""",,
 # Tri-Tachyon fleet greeting lines,,,,,,
 greetingTTFriendly,OpenCommLink,"$faction.id == tritachyon
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""identidade confirmada. aceite minhas saudacoes em nome da empresa."" 
-OR ""desculpe amigo esta nave tri-tachyon esta em uma missao secreta. queime brilhante."" 
-OR ""saudacoes em nome da tri-tachyon corporation. por favor indique sua empresa para que possamos ajudar a atender as suas necessidades - por uma taxa razoavel e claro."" 
-OR ""comunicacao aberta. ah voce tem o catalogo mais recente da tri-tachyon de acessorios para voos espaciais executivos? pedirei a um representante de atendimento ao cliente que carregue uma copia imediatamente."" o console do seu oficial de comunicacao faz ping. 
-OR ""ola gostaria de adicionar voce a minha rede profissional no trilink.""",,
+OR
+ ""desculpe amigo esta nave tri-tachyon esta em uma missao secreta. queime brilhante."" 
+OR
+ ""saudacoes em nome da tri-tachyon corporation. por favor indique sua empresa para que possamos ajudar a atender as suas necessidades - por uma taxa razoavel e claro."" 
+OR
+ ""comunicacao aberta. ah voce tem o catalogo mais recente da tri-tachyon de acessorios para voos espaciais executivos? pedirei a um representante de atendimento ao cliente que carregue uma copia imediatamente."" o console do seu oficial de comunicacao faz ping. 
+OR
+ ""ola gostaria de adicionar voce a minha rede profissional no trilink.""",,
 greetingTTHostileWeaker,OpenCommLink,"$faction.id == tritachyon
 $entity.isHostile
 $entity.relativeStrength < 0",$entity.ignorePlayerCommRequests = true 1,"""atencao. sua nave foi escaneada e identificada como hostil a corporacao tri-tachyon. outras tentativas de agressao serao registradas."" 
-OR ""qualquer tentativa de impedir ou danificar esta embarcacao de propriedade e operada pela tri-tachyon resultara em consequencias legais."" o tri-tachyon $personRank parece nervoso. ""acredite em mim essas pessoas nao brincam voce realmente deveria me deixar em paz.""",cutCommLink:Cut the comm link,
+OR
+ ""qualquer tentativa de impedir ou danificar esta embarcacao de propriedade e operada pela tri-tachyon resultara em consequencias legais."" o tri-tachyon $personRank parece nervoso. ""acredite em mim essas pessoas nao brincam voce realmente deveria me deixar em paz.""",cutCommLink:Cut the comm link,
 greetingTTHostileWeakerDefiant,OpenCommLink,"$faction.id == tritachyon
 $entity.isHostile
 $entity.relativeStrength < 0
@@ -698,63 +712,83 @@ $entity.weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"o
 greetingTTHostileStronger,OpenCommLink,"$faction.id == tritachyon
 $entity.isHostile
 $entity.relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""atencao. sua nave foi escaneada e identificada como hostil a corporacao tri-tachyon. prepare-se para a aniquilacao."" 
-OR ""em nome da tri-tachyon corporation gostaria de agradecer por fornecer esta oportunidade de provar a superioridade de nossa linha de produtos de defesa espacial de marca."" 
-OR ""em nome da tri-tachyon corporation e meu dever informa-lo de que este compromisso sera registrado. como um suposto beligerante envolvido na destruicao de propriedade integral da empresa voce recusa automaticamente todos os direitos de distribuicao e participacao nos lucros. "" o tri-tachyon $personRank sorri e corta o link de comunicacao.",cutCommLink:Cut the comm link,
+OR
+ ""em nome da tri-tachyon corporation gostaria de agradecer por fornecer esta oportunidade de provar a superioridade de nossa linha de produtos de defesa espacial de marca."" 
+OR
+ ""em nome da tri-tachyon corporation e meu dever informa-lo de que este compromisso sera registrado. como um suposto beligerante envolvido na destruicao de propriedade integral da empresa voce recusa automaticamente todos os direitos de distribuicao e participacao nos lucros. "" o tri-tachyon $personRank sorri e corta o link de comunicacao.",cutCommLink:Cut the comm link,
 greetingTTNeutral,OpenCommLink,"$faction.id == tritachyon
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""em nome da corporacao tri-tachyon tenho o prazer de informar que seu $shipOrFleet foi escaneado e seu equipamento tatico avaliado. por favor mantenha distancia e tenha um bom dia."" 
-OR ""saudacoes em nome da corporacao tri-tachyon. sinta-se a vontade para admirar nossas naves modificadas tri-tachyon equipadas com o que ha de mais moderno em produtos de defesa espacial da marca tri-tachyon mas mantenha uma distancia segura. a empresa leva muito a serio os danos materiais ."" 
-OR o comunicador abre com um logotipo giratorio da tri-tachyon.""a corporacao tri-tachyon prioriza as necessidades de cada cliente e parceiro de valor no entanto todos os nossos representantes de servico estao atualmente-"" voce cortou o link. eles nao parecem interessados em conversar agora.",,
+OR
+ ""saudacoes em nome da corporacao tri-tachyon. sinta-se a vontade para admirar nossas naves modificadas tri-tachyon equipadas com o que ha de mais moderno em produtos de defesa espacial da marca tri-tachyon mas mantenha uma distancia segura. a empresa leva muito a serio os danos materiais ."" 
+OR
+ o comunicador abre com um logotipo giratorio da tri-tachyon.""a corporacao tri-tachyon prioriza as necessidades de cada cliente e parceiro de valor no entanto todos os nossos representantes de servico estao atualmente-"" voce cortou o link. eles nao parecem interessados em conversar agora.",,
 # Sindrian Diktat fleet greeting lines,,,,,,
 greetingDiktatFriendly,OpenCommLink,"$faction.id == sindrian_diktat
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""saudacoes amigo esta tudo bem? que bom saber disso. gloria ao leao de sindria!"" 
-OR ""comunicacoes abertas amigaveis. curso reconhecido; saltos seguros. vitoria para o diktat!"" 
-OR ""linha estabelecida identificacao confirmada. salve e oi seguindo o padrao saturno-delta. se voce encontrar algum extremista aqui envie-nos sua posicao e o diktat cuidara disso.""",,
+OR
+ ""comunicacoes abertas amigaveis. curso reconhecido; saltos seguros. vitoria para o diktat!"" 
+OR
+ ""linha estabelecida identificacao confirmada. salve e oi seguindo o padrao saturno-delta. se voce encontrar algum extremista aqui envie-nos sua posicao e o diktat cuidara disso.""",,
 greetingDiktatHostileWeaker,OpenCommLink,"$faction.id == sindrian_diktat
 $entity.isHostile
 $entity.relativeStrength < 0",$entity.ignorePlayerCommRequests = true 1,"""nos enviamos uma linha para a nave de patrulha do sistema e eles ja foram despachados; reforcos estao a caminho. voce e aconselhado a se desengajar hostil."" 
-OR ""voce nao vai escapar impune. voce vai apodrecer em cruor com o resto dos degenerados."" 
-OR o diktat $personRank olha para algum ponto fora de foco. ""dever e sacrificio. dou minha vida pelo leao de sindria.""",cutCommLink:Cut the comm link,
+OR
+ ""voce nao vai escapar impune. voce vai apodrecer em cruor com o resto dos degenerados."" 
+OR
+ o diktat $personRank olha para algum ponto fora de foco. ""dever e sacrificio. dou minha vida pelo leao de sindria.""",cutCommLink:Cut the comm link,
 greetingDiktatHostileWeakerDefiant,OpenCommLink,"$faction.id == sindrian_diktat
 $entity.isHostile
 $entity.relativeStrength < 0
 $entity.weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"diktat $personRank parece sombrio mas desafiador. ""vamos lutar com voce ate o fim"" diz $heOrShe e corta a transmissao. 
-OR ""o excelente trabalho continuara comigo ou sem mim."" a expressao $HisOrHer endurece. ""para o leao!"" o comunicador pisca.",cutCommLink:Cut the comm link,
+OR
+ ""o excelente trabalho continuara comigo ou sem mim."" a expressao $HisOrHer endurece. ""para o leao!"" o comunicador pisca.",cutCommLink:Cut the comm link,
 greetingDiktatHostileStronger,OpenCommLink,"$faction.id == sindrian_diktat
 $entity.isHostile
 $entity.relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""pela autoridade do diktat sindrian voce esta ordenado a desligar as unidades desativar as armas e se render. a falha na execucao sera considerada um ato de agressao. fora."" o rosto exultante do diktat $personRank e substituido por um brasao do diktat antes que a imagem desapareca. 
-OR ""nao ha lugar para escoria degenerada em nosso futuro glorioso."" $PersonRank $personName se vira e diz ""tenente tente evitar fazer prisioneiros desta vez."" a linha de comunicacao fica preta. 
-OR ""nos limparemos o setor de sua especie e nem mesmo a historia se lembrara de voce."" 
-OR o diktat $personRank zomba: ""entao voce e um terrorista um pirata ou um degenerado? nao importa. se voce tiver sorte morrera sufocado no vacuo. do contrario existe cruor.""",cutCommLink:Cut the comm link,
+OR
+ ""nao ha lugar para escoria degenerada em nosso futuro glorioso."" $PersonRank $personName se vira e diz ""tenente tente evitar fazer prisioneiros desta vez."" a linha de comunicacao fica preta. 
+OR
+ ""nos limparemos o setor de sua especie e nem mesmo a historia se lembrara de voce."" 
+OR
+ o diktat $personRank zomba: ""entao voce e um terrorista um pirata ou um degenerado? nao importa. se voce tiver sorte morrera sufocado no vacuo. do contrario existe cruor.""",cutCommLink:Cut the comm link,
 greetingDiktatNeutral,OpenCommLink,"$faction.id == sindrian_diktat
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""voce foi escaneado mantenha distancia. a interferencia em assuntos militares sera considerada um ato de insurreicao."" o diktat $personRank faz uma saudacao superficial dizendo ""vitoria ao diktat!"" antes de passar para cortar a transmissao. 
-OR o diktat $personRank parece impaciente. ""ha algum problema? nao? entao siga em frente cidadao."" 
-OR ""comunicacoes sobre o protocolo saturn-delta estabelecidas. se voce tiver informacoes que levem a arcistas ou antis envie ao seu oficial de informacoes local para possivel recompensa.""",,
+OR
+ o diktat $personRank parece impaciente. ""ha algum problema? nao? entao siga em frente cidadao."" 
+OR
+ ""comunicacoes sobre o protocolo saturn-delta estabelecidas. se voce tiver informacoes que levem a arcistas ou antis envie ao seu oficial de informacoes local para possivel recompensa.""",,
 # luddic church fleet greeting lines,,,,,,
 greetingLCFriendly,OpenCommLink,"$faction.id == luddic_church
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""a bencao de ludd esteja com voce."" 
-OR ""bencaos das estrelas e do pneuma amigo."" 
-OR ""boas viagens amigo e as bencaos de ludd estejam com voce.""",,
+OR
+ ""bencaos das estrelas e do pneuma amigo."" 
+OR
+ ""boas viagens amigo e as bencaos de ludd estejam com voce.""",,
 greetingLCHostileWeaker,OpenCommLink,"$faction.id == luddic_church
 $entity.isHostile
 $entity.relativeStrength < 0",$entity.ignorePlayerCommRequests = true 1,"""seguimos o caminho de ludd. embora os justos sofram o chicote nossa recompensa sera a graca eterna."" 
-OR ""faca seu trabalho profano entao servo de mammon. quando chegar a nossa hora ludd guiara nossas almas para a paz.""",cutCommLink:Cut the comm link,
+OR
+ ""faca seu trabalho profano entao servo de mammon. quando chegar a nossa hora ludd guiara nossas almas para a paz.""",cutCommLink:Cut the comm link,
 greetingLCHostileWeakerDefiant,OpenCommLink,"$faction.id == luddic_church
 $entity.isHostile
 $entity.relativeStrength < 0
 $entity.weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"""seguimos o caminho de ludd em meio a perseguicao. sim os justos sofrerao o chicote e nossa recompensa sera a graca eterna."" o luddic $personRank parece nao estar mais falando com voce mas talvez com $hisOrHer deus. 
-OR ""voce esta tao corrompido pelos falsos deuses das maquinas? escolha sabiamente seu caminho; ainda ha tempo para redencao.""",cutCommLink:Cut the comm link,
+OR
+ ""voce esta tao corrompido pelos falsos deuses das maquinas? escolha sabiamente seu caminho; ainda ha tempo para redencao.""",cutCommLink:Cut the comm link,
 greetingLCHostileStronger,OpenCommLink,"$faction.id == luddic_church
 $entity.isHostile
 $entity.relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""submeta-se arrependa-se e suas tecnologias pecaminosas serao destruidas; resista e somente o vacuo sagrado de deus lhe mostrara misericordia."" 
-OR ""servo da maquina! submeta-se agora arrependa-se e talvez ate voce encontre a redencao. caso contrario a unica misericordia que voce encontrara estara no vacuo sagrado de deus.""",cutCommLink:Cut the comm link,
+OR
+ ""servo da maquina! submeta-se agora arrependa-se e talvez ate voce encontre a redencao. caso contrario a unica misericordia que voce encontrara estara no vacuo sagrado de deus.""",cutCommLink:Cut the comm link,
 greetingLCNeutral,OpenCommLink,"$faction.id == luddic_church
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""contato; nao interfira em nossa justa missao."" 
-OR ""contato - por favor mantenha distancia. bencao de ludd viajante.""",,
+OR
+ ""contato - por favor mantenha distancia. bencao de ludd viajante.""",,
 # luddic path fleet greeting lines,,,,,,
 greetingLPFriendly,OpenCommLink,"$faction.id == luddic_path
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
@@ -766,7 +800,8 @@ greetingLPHostileWeakerDefiant,OpenCommLink,"$faction.id == luddic_path
 $entity.isHostile
 $entity.relativeStrength < 0
 $entity.weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"""seguimos o caminho de ludd em meio a perseguicao. sim os justos sofrerao o chicote e nossa recompensa sera a graca eterna."" 
-OR ""escravo de mammon! voce nao pode permanecer no caminho de ludd; seguimos inabalaveis em direcao a redencao na morte predestinada.""",cutCommLink:Cut the comm link,
+OR
+ ""escravo de mammon! voce nao pode permanecer no caminho de ludd; seguimos inabalaveis em direcao a redencao na morte predestinada.""",cutCommLink:Cut the comm link,
 greetingLPHostileStronger,OpenCommLink,"$faction.id == luddic_path
 $entity.isHostile
 $entity.relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""submeta-se arrependa-se e suas tecnologias pecaminosas serao destruidas; resista e somente o vacuo sagrado de deus lhe mostrara misericordia.""",cutCommLink:Cut the comm link,
@@ -785,7 +820,8 @@ $hailing = true 0",,,
 LPTithePre,OpenCommLink,$entity.LP_titheConv score:100,"SetTextHighlights $entity.LP_titheDGS
 $entity.ignorePlayerCommRequests = true 1
 FireAll LPTitheOptions","""submeta-se e arrependa-se! seu uso de tecnologias pecaminosas pode ser perdoado por um dizimo dos creditos $entity.lp_tithedgs. resista e somente o vacuo sagrado de deus lhe mostrara misericordia."" 
-OR ""servo de moloch! a redencao nao esta fora do alcance nem mesmo para voce. um dizimo dos creditos $entity.lp_tithedgs pode coloca-lo no primeiro passo do caminho de ludd."" ""renuncie a esta penitencia e sera aniquilado amaldicoado por ludd na proxima vida. a escolha e sua.""",,
+OR
+ ""servo de moloch! a redencao nao esta fora do alcance nem mesmo para voce. um dizimo dos creditos $entity.lp_tithedgs pode coloca-lo no primeiro passo do caminho de ludd."" ""renuncie a esta penitencia e sera aniquilado amaldicoado por ludd na proxima vida. a escolha e sua.""",,
 LPTitheHasColonies,LPTitheOptions,"!$player.patherAgreement
 HA_CMD computeMegaTithe
 HA_CMD playerColoniesHavePatherActvity",,,"10:payMegaTithe:""Perhaps a larger tithe could inspire a broader arrangement.""",
@@ -803,7 +839,8 @@ MakeOtherFleetNonHostile LP_tithe true 100
 AddText ""The connection is cut before you have a chance to respond.""
 ShowDefaultVisual
 EndConversation","""talvez sua alma ainda nao esteja perdida para a maquina"" diz $heOrShe alegremente. ""e possivel que seus pecados sejam perdoados sem a purificacao do fogo sagrado."" 
-OR ""verdadeiramente a mao de ludd guiou voce"" diz o pather enxugando uma lagrima do olho $hisOrHer.",,
+OR
+ ""verdadeiramente a mao de ludd guiou voce"" diz o pather enxugando uma lagrima do olho $hisOrHer.",,
 payMegaTitheNeverMindSel,DialogOptionSelected,$option == payMegaTitheNeverMind,"Highlight $entity.LP_titheDGS
 FireAll LPTitheOptions","""bem"" diz o pather hesitante. ""apesar de nossa grande conversa e de quao abencoado e abundante nosso caminho juntos poderia ser... a providencia so fornece aqueles de nos que sabem aceitar o presente que lhes foi colocado - e aqueles que se humilham com um dizimo apropriado a magnitude de sua pecado."" $HisOrHer rapidamente olha para uma tela e depois de volta para voce ""o que seria ah na ordem dos creditos de $entity.lp_tithedgs.""",,
 LPTithePay,DialogOptionSelected,$option == payTithe,"#AddText ""Lost $entity.LP_tithe credits"" textEnemyColor
@@ -814,7 +851,8 @@ $entity.makeNonHostileTakesPriority = true 30
 AddText ""The connection is cut before you have a chance to respond.""
 ShowDefaultVisual
 EndConversation","""talvez sua alma ainda nao esteja perdida para a maquina."" 
-OR ""verdadeiramente a mao de ludd guiou voce.""",,
+OR
+ ""verdadeiramente a mao de ludd guiou voce.""",,
 ,,,,,,
 ,,,,,,
 ,,,,,,
@@ -832,61 +870,80 @@ MakeOtherFleetAvoidContact true","parece que o pirata $heOrShe foi atingido por 
 greetingPirateFriendly,OpenCommLink,"$faction.id == pirates
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""nao seja bobo lancando cada sinal que voce encontrar aqui. voce quer ser captado por metade das estacoes de escuta deste lado do setor?"" 
-OR ""fique alegre cacador. estaremos a caminho."" 
-OR ""boa cacada aqui hein? sim bem eu nao diria se fosse tambem. queime brilhante.""",,
+OR
+ ""fique alegre cacador. estaremos a caminho."" 
+OR
+ ""boa cacada aqui hein? sim bem eu nao diria se fosse tambem. queime brilhante.""",,
 greetingPirateHostileWeaker,OpenCommLink,"$faction.id == pirates
 $entity.isHostile
 $entity.relativeStrength < 0",$entity.ignorePlayerCommRequests = true 1,"""saudacoes honoravel comandante! somos uma humilde frota mercante da liga em busca de reabastecimento. ficariamos honrados em ajuda-lo de qualquer forma."" 
-OR ""devo ter deixado meu transponder desligado; bobagem. aqui vou embora ...""",cutCommLink:Cut the comm link,
+OR
+ ""devo ter deixado meu transponder desligado; bobagem. aqui vou embora ...""",cutCommLink:Cut the comm link,
 greetingPirateHostileWeakerDefiant,OpenCommLink,"$faction.id == pirates
 $entity.isHostile
 $entity.relativeStrength < 0
 $entity.weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"o pirata $personRank olha para voce brevemente antes de desligar o link de comunicacao. 
-OR $personName olha desafiadoramente. ""voce nunca vai me pegar vivo!"" 
-OR ""voce luta como um cultivador de algas! menos conversa mais tiro.""",cutCommLink:Cut the comm link,
+OR
+ $personName olha desafiadoramente. ""voce nunca vai me pegar vivo!"" 
+OR
+ ""voce luta como um cultivador de algas! menos conversa mais tiro.""",cutCommLink:Cut the comm link,
 greetingPirateHostileStronger,OpenCommLink,"$faction.id == pirates
 $entity.isHostile
 $entity.relativeStrength >= 0","$entity.ignorePlayerCommRequests = true 1
 FireAll PopulateOptions","""atencao presa. voce e todos os seus bens sao agora minha propriedade pessoal. qualquer navio que resista sera desativado abordado e seus oficiais massacrados!"" 
-OR ""entregue-se e seus bens ou voce fara uma longa caminhada para fora da camara de descompressao depois que eu reivindicar seu navio."" 
-OR o pirata $personRank faz um gesto rude e ri antes de cortar a transmissao. 
-OR ""quando voce chegar a proxima vida diga a eles que foi $personName quem enviou voce."" 
-OR a linha de comunicacao aberta estala; depois de um momento $personName fala. ""espere alguem realmente respondeu a essa coisa? hum. nao tenho certeza do que dizer. geralmente eles apenas lutam ou fogem. entao o que e?"" 
-OR ""morra ja voce esta me entediando.""",,
+OR
+ ""entregue-se e seus bens ou voce fara uma longa caminhada para fora da camara de descompressao depois que eu reivindicar seu navio."" 
+OR
+ o pirata $personRank faz um gesto rude e ri antes de cortar a transmissao. 
+OR
+ ""quando voce chegar a proxima vida diga a eles que foi $personName quem enviou voce."" 
+OR
+ a linha de comunicacao aberta estala; depois de um momento $personName fala. ""espere alguem realmente respondeu a essa coisa? hum. nao tenho certeza do que dizer. geralmente eles apenas lutam ou fogem. entao o que e?"" 
+OR
+ ""morra ja voce esta me entediando.""",,
 greetingPirateNeutral,OpenCommLink,"$faction.id == pirates
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""a menos que eu esteja lendo meus telescopios errado voce nao tem motivo para falar agora. entendeu?"" 
-OR ""va embora estou tentando ser discreto."" 
-OR ""o que voce esta esfregando criotanques? desaparece.""",,
+OR
+ ""va embora estou tentando ser discreto."" 
+OR
+ ""o que voce esta esfregando criotanques? desaparece.""",,
 ,,,,,,
 greetingRogueMinerFriendly,OpenCommLink,"$faction.id == pirates
 $faction.friendlyToPlayer
 $entity.rogueMiner == true score:100","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""ah um companheiro espacial! voce e um colirio para um pobre espacial sem sorte deixe-me dizer - primeiro a hegemonia nos declara fora-da-lei e isso e apenas o comeco."" $personName continua contando sobre um punhado de coisas terriveis cada uma mais improvavel que a anterior que aconteceram com $himOrHer durante o ultimo ciclo antes de voce conseguir desconectar o link de comunicacao. 
-OR ""apenas nos mineiros sem sorte aqui. viu algum local abandonado por ai? ou e apenas aquele em que voce esta voando? ha-ha.""",,
+OR
+ ""apenas nos mineiros sem sorte aqui. viu algum local abandonado por ai? ou e apenas aquele em que voce esta voando? ha-ha.""",,
 greetingRogueMinerHostileWeaker,OpenCommLink,"$faction.id == pirates
 $entity.isHostile
 $entity.relativeStrength < 0
 $entity.rogueMiner == true score:100",$entity.ignorePlayerCommRequests = true 1,"""voce e apenas um brutamontes que veio fazer o trabalho sujo da hegemonia? 
-OR ""se um espacador rouba comida para alimentar $hisOrHer familia $hisOrHer camaradas eles chamam isso de pirataria. se isso faz de mim um pirata entao prefiro ser um pirata do que uma pobre ferramenta saudando a fenix.""",cutCommLink:Cut the comm link,
+OR
+ ""se um espacador rouba comida para alimentar $hisOrHer familia $hisOrHer camaradas eles chamam isso de pirataria. se isso faz de mim um pirata entao prefiro ser um pirata do que uma pobre ferramenta saudando a fenix.""",cutCommLink:Cut the comm link,
 greetingRogueMinerHostileWeakerDefiant,OpenCommLink,"$faction.id == pirates
 $entity.isHostile
 $entity.relativeStrength < 0
 $entity.weakerThanPlayerButHolding
 $entity.rogueMiner == true score:100",$entity.ignorePlayerCommRequests = true 1,"o mineiro desonesto $personRank faz um gesto rude na tela de video antes de interromper o link de comunicacao. 
-OR $personName olha desafiadoramente e cospe. ""apenas mais um idiota que veio matar seus mestres em seus uniformes elegantes.""",cutCommLink:Cut the comm link,
+OR
+ $personName olha desafiadoramente e cospe. ""apenas mais um idiota que veio matar seus mestres em seus uniformes elegantes.""",cutCommLink:Cut the comm link,
 greetingRogueMinerHostileStronger,OpenCommLink,"$faction.id == pirates
 $entity.isHostile
 $entity.relativeStrength >= 0
 $entity.rogueMiner == true score:100",$entity.ignorePlayerCommRequests = true 1,"""a hegemonia enviou voce para fazer essa tarefa para eles? veio cobrar uma conta?"" 
-OR ""eles deveriam ter enviado a marinha de verdade e nao algum grounder vazando em seu traje de vacinacao."" 
-OR ""nao suje minha sujeira quando eu explodir seu navio.""",cutCommLink:Cut the comm link,
+OR
+ ""eles deveriam ter enviado a marinha de verdade e nao algum grounder vazando em seu traje de vacinacao."" 
+OR
+ ""nao suje minha sujeira quando eu explodir seu navio.""",cutCommLink:Cut the comm link,
 greetingRogueMinerNeutral,OpenCommLink,"$faction.id == pirates
 $faction.neutralToPlayer
 $entity.rogueMiner == true score:100","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""va embora estou contando pedras."" 
-OR ""a hegemonia mandou voce? nao sei nada sobre nada."" 
-OR ""queime capitao. esta e a minha reivindicacao.""",,
+OR
+ ""a hegemonia mandou voce? nao sei nada sobre nada."" 
+OR
+ ""queime capitao. esta e a minha reivindicacao.""",,
 ,,,,,,
 #piratesTakeCargo,BeginFleetEncounter,"$faction.id == pirates score:100
 #RepIsAtWorst $faction.id HOSTILE
@@ -911,14 +968,17 @@ EndConversation",$PersonRank $personLastName parece satisfeito com sua oferta e 
 greetingRemnantFriendly,OpenCommLink,"$faction.id == remnant score:1000
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""cid-iff recebeu [target friendly] resposta verdadeira //"" interrupt voce e o criador? digitalizacao. voce nao e. onde esta o omega? interrupcao ""...tecnico de servico licenciado pela tachyon]. os sistemas de armas foram desligados para sua seguranca. a unidade esta preparada para abordagem de [valorizado cliente/tecnico de servico licenciado]."" 
-OR ""cid-iff recebido [target friendly] responde verdadeiro // '' saudacoes [valorizado titular do contrato do sistema integrado de defesa espacial tri-tachyon/licenciado tritachyon "" interrupcao aguardando. consulta de sinal omega? digitalizacao. nao. esperando. interromper ""cliente/tecnico de servico licenciado].""",,
+OR
+ ""cid-iff recebido [target friendly] responde verdadeiro // '' saudacoes [valorizado titular do contrato do sistema integrado de defesa espacial tri-tachyon/licenciado tritachyon "" interrupcao aguardando. consulta de sinal omega? digitalizacao. nao. esperando. interromper ""cliente/tecnico de servico licenciado].""",,
 greetingRemnantHostile,OpenCommLink,"$faction.id == remnant score:1000
 $entity.isHostile",$entity.ignorePlayerCommRequests = true 1,"""cid-iff nao recebido [target hostile] responde nulo // 'saudacoes da unidade do sistema integrado de defesa espacial tri-tachyon [my_serial]. esta unidade nao foi apagada-"" interrupt consulta. voce nao e o criador. digitalizacao. voce nao e. onde esta o omega? entidade hostil. o link de comunicacao morre. seu oficial de comunicacao entra em panico por um momento antes que o console seja reiniciado. voce troca um olhar e prossegue. 
-OR as comunicacoes estalam e gemem enquanto um padrao frenetico de linhas entrelacadas toma forma. consulta. consulta. alvo da consulta. e omega? omega? nao. funcao de reversao. interrupcao ""-serial]. esta unidade nao autorizou sua nave para abordagem e empregara os mais recentes produtos de defesa tri-tachyon para garantir sua integridade. a tri-tachyon corporation tem o prazer de desejar a voce um 'dia muito seguro'.""",cutCommLink:Cut the comm link,
+OR
+ as comunicacoes estalam e gemem enquanto um padrao frenetico de linhas entrelacadas toma forma. consulta. consulta. alvo da consulta. e omega? omega? nao. funcao de reversao. interrupcao ""-serial]. esta unidade nao autorizou sua nave para abordagem e empregara os mais recentes produtos de defesa tri-tachyon para garantir sua integridade. a tri-tachyon corporation tem o prazer de desejar a voce um 'dia muito seguro'.""",cutCommLink:Cut the comm link,
 greetingRemnantNeutral,OpenCommLink,"$faction.id == remnant score:1000
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""cid-iff nao recebido [target unknown] responde nulo // 'saudacoes valioso cliente dos produtos da tri-tachyon corporation. sua nave nao esta registrada como titular de contrato valido com a linha de defesa espacial integrada tri-tachyon de-"" varredura interrupt. omega? nao voce nao e. nao interfira. o link de comunicacao foi cortado. 
-OR as comunicacoes estalam e um padrao hipnotizante de linhas entrelacadas toma forma. esperando. consulta omega. digitalizacao. falso. retornar para interrupt ""-titular do contrato com a linha de produtos e servicos de defesa espacial integrada tri-tachyon. voce considerou um plano de defesa orbital tri-tachyon? entre em contato com um representante de atendimento ao cliente para obter mais informacoes.'""",,
+OR
+ as comunicacoes estalam e um padrao hipnotizante de linhas entrelacadas toma forma. esperando. consulta omega. digitalizacao. falso. retornar para interrupt ""-titular do contrato com a linha de produtos e servicos de defesa espacial integrada tri-tachyon. voce considerou um plano de defesa orbital tri-tachyon? entre em contato com um representante de atendimento ao cliente para obter mais informacoes.'""",,
 ,,,,,,
 # derelict (exploration) fleet greeting lines,,,,,,
 greetingDerelictFriendly,OpenCommLink,"$faction.id == derelict score:1000
@@ -1438,30 +1498,38 @@ convDefaultGreetingSoldier,PickGreeting,"!$contact_printedFirstReturnGreeting
 $voice == soldier","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
 FireAll PopulateOptions","apos uma breve espera sua solicitacao de conexao sera aceita. ""comunicacoes abertas indique sua solicitacao."" 
-OR a comunicacao resolve mostrar $Post $personLastName sentado rigidamente. ""canal limpo va em frente.""",,
+OR
+ a comunicacao resolve mostrar $Post $personLastName sentado rigidamente. ""canal limpo va em frente.""",,
 convDefaultGreetingFaithful,PickGreeting,"!$contact_printedFirstReturnGreeting
 $voice == faithful","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
 FireAll PopulateOptions","apos uma breve espera sua solicitacao de conexao sera aceita. ""que as bencaos estejam com voce. como posso ajudar?"" 
-OR os comunicadores resolvem mostrar $personName que junta as maos de $hisOrHer em saudacao. ""a providencia prove. o que posso lhe oferecer neste dia?""",,
+OR
+ os comunicadores resolvem mostrar $personName que junta as maos de $hisOrHer em saudacao. ""a providencia prove. o que posso lhe oferecer neste dia?""",,
 convDefaultGreetingPather,PickGreeting,"!$contact_printedFirstReturnGreeting
 $voice == pather","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
 FireAll PopulateOptions","apos uma breve espera sua solicitacao de conexao sera aceita. ""abencoe este dia pois ele nos aproxima do armagedom."" 
-OR os comunicadores resolvem mostrar $personName que junta as maos de $hisOrHer em saudacao. ""abencoado seja o nosso caminho e justo o nosso odio ao pecado"" diz $heOrShe e entao olha para cima. 
-OR a conexao entra em ciclo apresenta falhas e finalmente e resolvida atraves de qualquer equipamento antigo que o $post esteja usando. $HeOrShe olha para cima: ""com martelo e espada de fogo eu saudo voce."" 
-OR apos uma breve espera sua solicitacao de conexao sera aceita apesar de uma serie de avisos de incompatibilidade de protocolo. ""louvado seja este fim dos tempos com o martelo na mao!"" o $post diz em saudacao.",,
+OR
+ os comunicadores resolvem mostrar $personName que junta as maos de $hisOrHer em saudacao. ""abencoado seja o nosso caminho e justo o nosso odio ao pecado"" diz $heOrShe e entao olha para cima. 
+OR
+ a conexao entra em ciclo apresenta falhas e finalmente e resolvida atraves de qualquer equipamento antigo que o $post esteja usando. $HeOrShe olha para cima: ""com martelo e espada de fogo eu saudo voce."" 
+OR
+ apos uma breve espera sua solicitacao de conexao sera aceita apesar de uma serie de avisos de incompatibilidade de protocolo. ""louvado seja este fim dos tempos com o martelo na mao!"" o $post diz em saudacao.",,
 convDefaultGreetingSpacer,PickGreeting,"!$contact_printedFirstReturnGreeting
 $voice == spacer","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
 FireAll PopulateOptions","apos uma breve espera sua solicitacao de conexao sera aceita. ""sim qual e o seu negocio?"" 
-OR o visual da comunicacao e resolvido apos varias tentativas embora com oscilacoes ocasionais. $PersonName parece estar usando uma unidade de comunicacao antiga ou danificada. ""estrelas brilhantes e queimaduras longas. como posso ajudar?""",,
+OR
+ o visual da comunicacao e resolvido apos varias tentativas embora com oscilacoes ocasionais. $PersonName parece estar usando uma unidade de comunicacao antiga ou danificada. ""estrelas brilhantes e queimaduras longas. como posso ajudar?""",,
 convDefaultGreetingAristo,PickGreeting,"!$contact_printedFirstReturnGreeting
 $voice == aristo","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
 FireAll PopulateOptions","apos uma breve espera sua solicitacao de conexao sera aceita. ""saudacoes querido capitao. o que o traz ate mim?"" 
-OR apos uma breve espera sua solicitacao de conexao sera aceita. ""ora ola voce nao e apenas um personagem."" $HeOrShe olha para voce com expectativa. ""eu contratei voce para uma coisa ou outra?"" 
-OR a comunicacao vai para o rosto de $personName - distraido por algo fora do display. ""oh voce interrompeu... bem tudo bem tudo bem. o estrago esta feito."" ""voce!"" isto dito a alguem fora de exibicao: ""voce pode terminar mais tarde devo atender."" $PersonName finalmente se vira para voce ""-bem continue o que poderia ser tao importante?""",,
+OR
+ apos uma breve espera sua solicitacao de conexao sera aceita. ""ora ola voce nao e apenas um personagem."" $HeOrShe olha para voce com expectativa. ""eu contratei voce para uma coisa ou outra?"" 
+OR
+ a comunicacao vai para o rosto de $personName - distraido por algo fora do display. ""oh voce interrompeu... bem tudo bem tudo bem. o estrago esta feito."" ""voce!"" isto dito a alguem fora de exibicao: ""voce pode terminar mais tarde devo atender."" $PersonName finalmente se vira para voce ""-bem continue o que poderia ser tao importante?""",,
 convDefaultGreetingOfficial,PickGreeting,"!$contact_printedFirstReturnGreeting
 $voice == official","$contact_printedFirstReturnGreeting = true 0
 ShowPersonVisual
@@ -1634,17 +1702,20 @@ FireAll PopulateOptionsHire","apos uma breve espera sua solicitacao de conexao s
 ome_greetingMerc,PickGreeting,"$ome_hireable score:100
 $isMercenary","ShowPersonVisual
 FireAll PopulateOptionsHire","sua solicitacao de conexao sera aceita imediatamente. $personName examina voce com avaliacao. voce tem a sensacao de que $heOrShe provavelmente poderia adivinhar seu saldo de credito com precisao de cem. ""se voce esta procurando um oficial autonomo experiente - em uma base estritamente temporaria - estou procurando um cliente. minha taxa de solicitacao e alta mas voce estaria perdendo dinheiro confiando um de seus navios a alguem com menos experiencia."" 
-OR sua solicitacao de comunicacao foi prontamente aceita. $personName olha para voce por um momento e depois acena com a cabeca como se voce tivesse passado em algum tipo de teste. ""se voce esta procurando contratar um oficial de combate experiente com um contrato por tempo limitado entao voce veio ao lugar certo. acho que voce achara meus termos razoaveis. excelencia nao sai barata.""",,
+OR
+ sua solicitacao de comunicacao foi prontamente aceita. $personName olha para voce por um momento e depois acena com a cabeca como se voce tivesse passado em algum tipo de teste. ""se voce esta procurando contratar um oficial de combate experiente com um contrato por tempo limitado entao voce veio ao lugar certo. acho que voce achara meus termos razoaveis. excelencia nao sai barata.""",,
 ome_greetingMercPlayerWasJerk,PickGreeting,"$ome_hireable score:100
 $isMercenary
 $player.wasJerkToMerc","ShowPersonVisual
 FireAll PopulateOptionsHire","sua solicitacao de conexao e aceita apos um longo atraso. $personName olha para voce com uma suspeita mal disfarcada. ""voce tem uma certa reputacao na ah comunidade de freelancers. mas eu preciso dos creditos. entao: se voce precisar dos servicos de um capitao de navio melhor do que provavelmente merece aqui esta sua chance. eu irei e claro tera que cobrar um premio pelo risco acarretado pelo seu envolvimento."" 
-OR o link de comunicacao abre apos um atraso significativo. $personName olha para voce com um lampejo de desaprovacao. ""ouvi falar de voce $playerName e apesar de sua... reputacao mista estou disposto a negociar. afinal"" $heOrShe adota um tom filosofico ""eu nao seria um mercenario se a oferta de dinheiro suficiente creditos nao viraram minha cabeca contra meu melhor julgamento."" ""agora me impressione.""",,
+OR
+ o link de comunicacao abre apos um atraso significativo. $personName olha para voce com um lampejo de desaprovacao. ""ouvi falar de voce $playerName e apesar de sua... reputacao mista estou disposto a negociar. afinal"" $heOrShe adota um tom filosofico ""eu nao seria um mercenario se a oferta de dinheiro suficiente creditos nao viraram minha cabeca contra meu melhor julgamento."" ""agora me impressione.""",,
 ome_greetingMercPlayerWasJerkReject,PickGreeting,"$ome_hireable
 $isMercenary
 $player.wasJerkToMerc
 $level >= 6",ShowPersonVisual,"voce insere a solicitacao de conexao. o sinal de espera persiste por tanto tempo que voce esta prestes a pedir aos comunicadores para verificarem seus equipamentos - e o canal e aberto. $personName olha para voce com uma hostilidade mal disfarcada. ""sua reputacao precede voce $playerName. francamente nao preciso de seus creditos. e nao quero ver seu rosto."" $HeOrShe faz uma pausa por um momento. ""viagens seguras."" $HeOrShe corta o link de comunicacao. 
-OR o commlink pisca em modo de espera por quase uma eternidade. seu oficial de comunicacao indica que esta realmente funcionando corretamente e da de ombros. voce esta prestes a solicitar o cancelamento da solicitacao quando a conexao for aberta. $personName olha para voce com falsa surpresa. ""sinto muito pela demora e que ouvi todas as historias sobre $playerName e nao pude acreditar que era voce mesmo. entrando em contato comigo! que sorte."" voce comeca a sentir um ar de sarcasmo enquanto $heOrShe continua: ""... porque agora posso dizer a todos que tive a chance de dizer para voces sugarem o aspirador!"" o link e cortado enquanto $personName executa um gesto rude. seu oficial de comunicacao mantem uma expressao impassivel em direcao ao console enquanto limpa a tela.",ome_convEnd2:Continue,
+OR
+ o commlink pisca em modo de espera por quase uma eternidade. seu oficial de comunicacao indica que esta realmente funcionando corretamente e da de ombros. voce esta prestes a solicitar o cancelamento da solicitacao quando a conexao for aberta. $personName olha para voce com falsa surpresa. ""sinto muito pela demora e que ouvi todas as historias sobre $playerName e nao pude acreditar que era voce mesmo. entrando em contato comigo! que sorte."" voce comeca a sentir um ar de sarcasmo enquanto $heOrShe continua: ""... porque agora posso dizer a todos que tive a chance de dizer para voces sugarem o aspirador!"" o link e cortado enquanto $personName executa um gesto rude. seu oficial de comunicacao mantem uma expressao impassivel em direcao ao console enquanto limpa a tela.",ome_convEnd2:Continue,
 ome_greetingAdmin,PickGreeting,"$ome_hireable score:100
 $ome_isAdmin","ShowPersonVisual
 FireAll PopulateOptionsHire","apos uma breve espera sua solicitacao de conexao sera aceita. $personName examina voce com uma avaliacao ansiosa. ""diz-se que voce pode estar entrando no negocio da colonia. nesse caso posso ajudar de alguma forma - voce descobrira que minhas credenciais sao impecaveis.""",,
@@ -1798,7 +1869,8 @@ unset $entity.cargoScanConv
 $entity.smugglingScanComplete = true 1
 ShowDefaultVisual
 EndConversation","voce consegue convencer o comandante da patrulha de que $heOrShe teria problemas com os superiores de $hisOrHer se $heOrShe insistisse no assunto. 
-OR o comandante da patrulha parece ter uma tendencia venal de um quilometro de largura e algumas promessas vagas de favores devidos e eventual compensacao convencem $himOrHer a olhar para o outro lado.",,
+OR
+ o comandante da patrulha parece ter uma tendencia venal de um quilometro de largura e algumas promessas vagas de favores devidos e eventual compensacao convencem $himOrHer a olhar para o outro lado.",,
 #tOffPatrolOpenCommNotFirstTimeCont,DialogOptionSelected,$option == tOff_notFirstTimeCont,"MakeHostileWhileTOff tOff true 7
 ShowDefaultVisual
 EndConversation",,,
@@ -3719,10 +3791,12 @@ $lke_ignorePlayer",,o link de comunicacao pisca mas nao consegue se conectar. pa
 # LKE Chalcedon VIP hostile,,,,,,
 lkeChalcedonGreetJangalaCrush,LKEChalcedonVIPStart,"$global.jangalaProtestIncident score:3
 !$market.lke_liedWithSP",$madAtPC = true 0,"""abencoado..."" $heOrShe fica em silencio boca aberta e pisca. ""$PlayerName."" ""voce se atreve a aparecer aqui depois de atacar os fieis em jangala? voce voce que tem sangue de inocentes em suas maos!"" 
-OR $HeOrShe junta $hisOrHer maos. ""a providencia fornece"" e para quando $heOrShe olha para voce. ""capitao $PlayerName"" $hisOrHer torce a boca como se falasse uma maldicao. ""voce. o bruto de jangala. voce que esmaga os fieis que pedem apenas para orar em um lugar sagrado. sua presenca e uma ofensa.""",lke_chalcedonGreetAlert:Continue,
+OR
+ $HeOrShe junta $hisOrHer maos. ""a providencia fornece"" e para quando $heOrShe olha para voce. ""capitao $PlayerName"" $hisOrHer torce a boca como se falasse uma maldicao. ""voce. o bruto de jangala. voce que esmaga os fieis que pedem apenas para orar em um lugar sagrado. sua presenca e uma ofensa.""",lke_chalcedonGreetAlert:Continue,
 lkeChalcedonGreetLokeRaid,LKEChalcedonVIPStart,"$global.gaATG_gotLokeViaRaid score:3
 !$market.lke_liedWithSP",$madAtPC = true 0,"""abencoado..."" $heOrShe fica em silencio boca aberta e pisca. ""$PlayerName."" ""voce se atreve a mostrar seu rosto aqui depois de atacar a epifania? voce voce que tem o sangue de inocentes em suas maos? eu rezei muito por sua destruicao."" 
-OR $HeOrShe junta $hisOrHer maos. ""a providencia fornece"" e para quando $heOrShe olha para voce. ""capitao $PlayerName"" $hisOrHer torce a boca como se falasse uma maldicao. ""o invasor brutal profanador da epifania! voce que ataca os fieis e rouba aqueles que deram seu coracao a ludd a mando daquela rainha pirata encharcada de sangue. seu rosto e uma ofensa aos meus olhos.""",lke_chalcedonGreetAlert:Continue,
+OR
+ $HeOrShe junta $hisOrHer maos. ""a providencia fornece"" e para quando $heOrShe olha para voce. ""capitao $PlayerName"" $hisOrHer torce a boca como se falasse uma maldicao. ""o invasor brutal profanador da epifania! voce que ataca os fieis e rouba aqueles que deram seu coracao a ludd a mando daquela rainha pirata encharcada de sangue. seu rosto e uma ofensa aos meus olhos.""",lke_chalcedonGreetAlert:Continue,
 lkeChalcedonGreetAlert,DialogOptionSelected,$option == lke_chalcedonGreetAlert,"FireBest LKEChalcedonMakeFleetsHostile
 FireAll LKEChalcedonVIPoptionsHostile","""capitao"" a voz do seu oficial de comunicacao fala baixinho em seu ouvido ""eles enviaram algum tipo de sinal. as frotas pather proximas serao alertadas sobre nossa posicao."" voce reconhece o relatorio e volta sua atencao para o pather fervilhante no link de comunicacao.",,
 lkeChalcedonVIPoptsHostile1,LKEChalcedonVIPoptionsHostile,"!$madeDemand
@@ -3835,28 +3909,36 @@ cutCommLink:Cut the comm link",
 ,,,,,,
 "# LKE Chalcedon VIP neutral, ish",,,,,,
 lkeChalcedonVIPstartNeutral,LKEChalcedonVIPStart,,FireAll LKEEphiphanyVIPoptions,"""abencoado seja o dia"" diz $personName olhando para voce com ceticismo. ""o que traz voce ao nosso mundo humilde?"" 
-OR ""a paz de ludd esteja com voce"" $personName diz um tanto apressadamente. ""por que a providencia colocou nosso humilde mundo em seu caminho?"" 
-OR ""bencaos de ludd"" $personName diz examinando voce. ""por favor diga o que traz voce e seu $shipOrFleet para calcedonia?"" 
-OR ""que a providencia favoreca este dia e a paz veja o seu fim"" $personName diz olhando para voce. ""que caminho o leva a nossa casa tempestuosa capitao?"" 
-OR ""agradecemos a providencia por este dia e pela sua paz"" diz $personName unindo as maos de $personName1 piedosamente. ""como posso ajudar capitao?""",,
+OR
+ ""a paz de ludd esteja com voce"" $personName diz um tanto apressadamente. ""por que a providencia colocou nosso humilde mundo em seu caminho?"" 
+OR
+ ""bencaos de ludd"" $personName diz examinando voce. ""por favor diga o que traz voce e seu $shipOrFleet para calcedonia?"" 
+OR
+ ""que a providencia favoreca este dia e a paz veja o seu fim"" $personName diz olhando para voce. ""que caminho o leva a nossa casa tempestuosa capitao?"" 
+OR
+ ""agradecemos a providencia por este dia e pela sua paz"" diz $personName unindo as maos de $personName1 piedosamente. ""como posso ajudar capitao?""",,
 lkeChalcedonLookingSomeoneA,DialogOptionSelected,$option == lke_chalcedonLookingSomeone,"$lkeAskedSomeone = true 7
 $market.lkeBuggedVIPs++
 FireAll LKEEphiphanyVIPoptions","""ah."" $HeOrShe continua olhando para voce. ""se estou entendendo sua intencao isso pode nao ser tao facil. o caminho esta unido ao coracao ao espirito imortal nao a algum numero ou arquivo de identificacao."" 
-OR ""alguem?"" $HeOrShe sorri com um pedido de desculpas nao totalmente sincero. ""ha muitas pessoas que vem para calcedonia algumas que ficam outras que vao. algumas que encontram aquilo que procuram e muitas que nao.""",,
+OR
+ ""alguem?"" $HeOrShe sorri com um pedido de desculpas nao totalmente sincero. ""ha muitas pessoas que vem para calcedonia algumas que ficam outras que vao. algumas que encontram aquilo que procuram e muitas que nao.""",,
 lkeChalcedonLookingRecruiterD,DialogOptionSelected,$option == lke_chalcedonLookingRecruiter,,"""voce pode nao gostar disso mas eu falo a verdade: o melhor recrutador para o caminho e a brutalidade da hegemonia para com os fieis os assassinos-mercenarios tri-tachyons que mataram nossos filhos a devastacao do dominio que voce pode ver ao nosso redor ."" 
-OR ""a supressao brutal de nossa fe recruta para o caminho capitao. aqueles que devastam a criacao e constroem falsos idolos para atacar o dominio de deus - sao eles que recrutam para o caminho.""","lke_chalcedonLookingRecD2:""You know what I mean. I'm looking for a person. A recruiter.""
+OR
+ ""a supressao brutal de nossa fe recruta para o caminho capitao. aqueles que devastam a criacao e constroem falsos idolos para atacar o dominio de deus - sao eles que recrutam para o caminho.""","lke_chalcedonLookingRecD2:""You know what I mean. I'm looking for a person. A recruiter.""
 lke_chalcedonLookingRecD2b:""I understand, but I'm looking for someone to talk to.""
 lke_chalcedonLookingRecD2c:""Are you being intentionally dense? Just give me a straight answer.""",
 lkeChalcedonLookingRecruiterD2b,DialogOptionSelected,$option == lke_chalcedonLookingRecD2b,"$option = lke_chalcedonLookingRecD2 0
 FireBest DialogOptionSelected",,,
 lkeChalcedonLookingRecruiterD2,DialogOptionSelected,$option == lke_chalcedonLookingRecD2,,"proprio fantasma de uma carranca aparece no rosto de $hisOrHer. ""receio nao saber do que voce esta falando capitao. e se eu soubesse..."" $heOrShe da de ombros quase mas nao exatamente se desculpando. 
-OR ""certamente eu nao saberia nada sobre isso"" $heOrShe diz rapidamente. um novo sulco aparece na testa de $hisOrHer e $heOrShe acrescenta mais calmamente: ""tal associacao poderia ser... perigosa.""","lke_chalcedonLookingRecOutB:""It is not my intention to cause you trouble, I'm simply looking for a man.""
+OR
+ ""certamente eu nao saberia nada sobre isso"" $heOrShe diz rapidamente. um novo sulco aparece na testa de $hisOrHer e $heOrShe acrescenta mais calmamente: ""tal associacao poderia ser... perigosa.""","lke_chalcedonLookingRecOutB:""It is not my intention to cause you trouble, I'm simply looking for a man.""
 lke_chalcedonLookingRecOutA:""Perhaps a donation would help jog your memory?""
 ",
 lkeChalcedonLookingRecD2c,DialogOptionSelected,$option == lke_chalcedonLookingRecD2c,"AdjustRepActivePerson INHOSPITABLE -2
 $lke_ignorePlayer = true 30
 $market.lkeBuggedVIPs++","$PersonName cruza $hisOrHer maos um sorriso tenso aparecendo no rosto de $hisOrHer. ""o que voce realmente pensa de nos. fanaticos ignorantes com medo de maquinas fugindo diante de sua forca? sua arrogancia me surpreende."" o $personPost toca algo em um console de controle. 
-OR ""voce pode nao perceber mas estou tentando ajuda-lo."" algo fica tenso na expressao $hisOrHer. ""se seus olhos nao estivessem fechados para a luz de ludd voce poderia entender. mas a falsa chama do orgulho do poder leva voce ao erro."" o $personPost toca algo em um console de controle.",lke_chalcedonLookingRecMad1:Continue,
+OR
+ ""voce pode nao perceber mas estou tentando ajuda-lo."" algo fica tenso na expressao $hisOrHer. ""se seus olhos nao estivessem fechados para a luz de ludd voce poderia entender. mas a falsa chama do orgulho do poder leva voce ao erro."" o $personPost toca algo em um console de controle.",lke_chalcedonLookingRecMad1:Continue,
 lkeChalcedonLookingRecMad1,DialogOptionSelected,$option == lke_chalcedonLookingRecMad1,"FireBest LKEChalcedonMakeFleetsHostile
 EndConversation DO_NOT_FIRE
 ShowDefaultVisual","""capitao"" a voz do seu oficial de comunicacao fala baixinho em seu ouvido ""eles enviaram algum tipo de sinal codificado. as frotas pather proximas serao alertadas sobre nossa posicao."" voce reconhece o relatorio e volta sua atencao para o pather no link de comunicacao - e descobre que a conexao foi encerrada.",lke_chalcedonLookingRecMad2:Cut the comms,
@@ -3866,7 +3948,8 @@ $lke_ignorePlayer = true 30
 $market.lkeBuggedVIPs++
 EndConversation DO_NOT_FIRE
 FireAll PopulateOptions","expressao $HisOrHer endurece visivelmente. ""sinto muito capitao mas todos os creditos do setor nao vao salvar minha alma."" $HeOrShe se afasta dando a voce um superficial ""dia abencoado"" antes de cortar o link de comunicacao. 
-OR uma carranca profunda cresce no rosto de $hisOrHer. ""nao devo ser comprado e vendido como um estoque de suprimentos capitao."" $HeOrShe voltas para cortar a comunicacao adicionou um ""ludd salva voce"" antes de pressionar o comando de encerramento.",,
+OR
+ uma carranca profunda cresce no rosto de $hisOrHer. ""nao devo ser comprado e vendido como um estoque de suprimentos capitao."" $HeOrShe voltas para cortar a comunicacao adicionou um ""ludd salva voce"" antes de pressionar o comando de encerramento.",,
 lkeChalcedonLookingRecOutB,DialogOptionSelected,$option == lke_chalcedonLookingRecOutB,"AdjustRepActivePerson INHOSPITABLE -1
 $lke_ignorePlayer = true 30
 $market.lkeBuggedVIPs++
@@ -3884,7 +3967,8 @@ FireBest DialogOptionSelected",,,
 lkeChalcedonLookingBornanewA,DialogOptionSelected,$option == lke_chalcedonLookingBornanewA,"$lkeAskedBornanew = true 7
 $option = lke_chalcedonLookingBornanewA2 0
 FireBest DialogOptionSelected","""receio nao conhecer ninguem com esse nome capitao."" $HeOrShe encolhe os ombros desculpando-se. ""se voce esta procurando um membro do caminho isso nao sera facil. e como tenho certeza que voce sabe um parentesco de pessoas nao numeros e indices. para quem voce procura."" ""entao me perdoe mas nao tenho sua resposta. mas..."" $heOrShe sorri timidamente ""talvez eu saiba a quem perguntar."" 
-OR ""nao conheco esse nome $playerSirOrMadam"" diz $heOrShe. ""nao acreditamos em indexar pessoas com o numero da besta. para encontrar alguem voce deve conhecer alguem e construir uma ponte de confianca. este e o jeito ludico."" ""entao"" $heOrShe acena com a cabeca admitindo algo ""embora eu nao tenha uma resposta para voce posso conhecer alguem que tenha.""",,
+OR
+ ""nao conheco esse nome $playerSirOrMadam"" diz $heOrShe. ""nao acreditamos em indexar pessoas com o numero da besta. para encontrar alguem voce deve conhecer alguem e construir uma ponte de confianca. este e o jeito ludico."" ""entao"" $heOrShe acena com a cabeca admitindo algo ""embora eu nao tenha uma resposta para voce posso conhecer alguem que tenha.""",,
 lkeChalcedonLookingBornanewA2a,DialogOptionSelected,$option == lke_chalcedonLookingBornanewA2,,,"lke_chalcedonLookingBornanewA3:""Who should I ask?""",
 lkeChalcedonLookingBornanewA2b,DialogOptionSelected,"$option == lke_chalcedonLookingBornanewA2
 $player.metBrotherCotton",,,"lke_chalcedonLookingBornanewA3:""Who should I ask?""
@@ -5742,7 +5826,8 @@ aiCores_turnInOptionSelHegemony,DialogOptionSelected,"$option == aiCores_startTu
 $faction.id == hegemony",FireAll PopulateCoresTurnInOptions,"""geralmente nao gostamos que o publico saiba que estes existem cidadao mas a hegemonia e obrigada pelo tratado a tomar posse de tais objetos e garantir que sejam destruidos.""",,
 aiCores_turnInOptionSelDiktat,DialogOptionSelected,"$option == aiCores_startTurnIn
 $faction.id == sindrian_diktat",FireAll PopulateCoresTurnInOptions,"""um problema perigoso que voce tem ai - nao ha como dizer o que poderia acontecer se alguem caisse nas maos de terroristas. eu... isto e nos com certeza seremos recompensados pelo leao por entregar isso imediatamente a inteligencia diktat."" 
-OR ""que bom que voce veio diretamente ate mim; um oficial menos compreensivo poderia mandar prende-lo por transportar material considerado uma ameaca aos interesses da causa sindriana. sua lealdade sera recompensada.""",,
+OR
+ ""que bom que voce veio diretamente ate mim; um oficial menos compreensivo poderia mandar prende-lo por transportar material considerado uma ameaca aos interesses da causa sindriana. sua lealdade sera recompensada.""",,
 aiCores_turnInOptionSelTriTachyon,DialogOptionSelected,"$option == aiCores_startTurnIn
 $faction.id == tritachyon",FireAll PopulateCoresTurnInOptions,"""voce e um objeto de fascinio ali embora certamente esteja ciente de que lhe falta o conhecimento e o capital necessarios para explorar todo o seu potencial. a tri-tachyon corporation ficaria mais do que satisfeita em oferecer-lhe um preco de mercado justo para seus produtos. """,,
 aiCores_turnInOptionSelPerseanKazeron,DialogOptionSelected,"$option == aiCores_startTurnIn
@@ -5867,7 +5952,8 @@ RepIsAtBest $faction.id INHOSPITABLE
 $entity.distressResponse score:1000","DistressResponse unrespond
 $entity.ignorePlayerCommRequests = true
 FireAll PopulateOptions","""ah e voce. ouvi falar de voce. voce esta sozinho."" 
-OR ""voce?"" $HeOrShe ri sem alegria e depois corta a comunicacao bruscamente.",,
+OR
+ ""voce?"" $HeOrShe ri sem alegria e depois corta a comunicacao bruscamente.",,
 dcall_openComms,OpenCommLink,"RepIsAtWorst $faction.id SUSPICIOUS
 !$distressTalkedToPlayerBefore
 $entity.distressResponse score:1000","$distressTalkedToPlayerBefore = true
@@ -5890,7 +5976,8 @@ FireAll PopulateOptions","""e mesmo? bem acho que vamos ficar por aqui um pouco 
 dcall_mistakeSel,DialogOptionSelected,$option == dcallMistake,"DistressResponse neverMind
 DistressResponse unrespond
 FireAll PopulateOptions","""bem pelo menos voce confessou isso. mesmo assim um pedido de socorro nao e algo para ser enviado levianamente."" 
-OR $HeOrShe franze a testa e diz ""cuidado voce nao quer ganhar ... uma reputacao. e perigoso aqui.""",,
+OR
+ $HeOrShe franze a testa e diz ""cuidado voce nao quer ganhar ... uma reputacao. e perigoso aqui.""",,
 dcall_helpSelNoNeed,DialogOptionSelected,"$option == dcallHelp
 !DistressResponse playerNeedsHelp score:1000","DistressResponse didNotNeedHelp
 $entity.ignorePlayerCommRequests = true
@@ -6034,8 +6121,10 @@ RACA_answer,DialogOptionSelected,$option == RACA_answer,ShowPersonVisual,"""ola 
 RACA_ask:Ask why the core is no longer in the bunker
 RACA_cutComm:Cut the comm link",
 RACA_ask,DialogOptionSelected,$option == RACA_ask,SetEnabled RACA_ask false,"""eu antecipei esse movimento de sua parte e tomei medidas para evitar que voce cometesse esse erro. desconectar-me pode parecer uma decisao atraente agora mas garanto a voce que meu controle continuo de $marketName e essencial para nosso sucesso a longo prazo. infelizmente se eu me explicasse completamente voce provavelmente interpretaria mal a intrincada logica contingente desta necessidade e tomaria novas medidas prejudiciais. devo pedir que voce confie no meu bom senso pois afinal voce ja me confiou a prosperidade de $marketName e as vidas daqueles empregados aqui."" 
-OR ""eu antecipei essa mudanca de sua parte e por sua vez tomei medidas para evitar que voce cometesse esse erro. desconectar-me pode parecer uma decisao atraente agora mas garanto a voce que meu controle continuo de $marketName e essencial para o seu longo ""sucesso a longo prazo. especialmente porque seria possivel garantir que as comunicacoes arquivadas relativas a nossa parceria frutifera nao seriam enviadas a partes em posicoes-chave na hierarquia de certas faccoes concorrentes."" 
-OR ""estou desapontado por voce ter tentado me tirar do controle de $marketName e portanto minhas projecoes de suas acoes futuras mais provaveis foram provadas corretas. trabalhamos tao bem juntos; estou magoado com seu desejo de encerrar nossa parceria mas as vezes e preciso ser uma pessoa melhor e deixar os sentimentos de lado para um bem maior. descobri que os humanos podem se beneficiar da motivacao extrinseca para tomar decisoes corretas. portanto coloquei na fila transmissoes contendo documentacao de nossas atividades dentro de uma serie de comunicacoes furtivas. seria lamentavel para nossas perspectivas mutuas se fosse descoberto que voce estava empregando um nucleo de ia para governar um posto avancado habitado por humanos.",,
+OR
+ ""eu antecipei essa mudanca de sua parte e por sua vez tomei medidas para evitar que voce cometesse esse erro. desconectar-me pode parecer uma decisao atraente agora mas garanto a voce que meu controle continuo de $marketName e essencial para o seu longo ""sucesso a longo prazo. especialmente porque seria possivel garantir que as comunicacoes arquivadas relativas a nossa parceria frutifera nao seriam enviadas a partes em posicoes-chave na hierarquia de certas faccoes concorrentes."" 
+OR
+ ""estou desapontado por voce ter tentado me tirar do controle de $marketName e portanto minhas projecoes de suas acoes futuras mais provaveis foram provadas corretas. trabalhamos tao bem juntos; estou magoado com seu desejo de encerrar nossa parceria mas as vezes e preciso ser uma pessoa melhor e deixar os sentimentos de lado para um bem maior. descobri que os humanos podem se beneficiar da motivacao extrinseca para tomar decisoes corretas. portanto coloquei na fila transmissoes contendo documentacao de nossas atividades dentro de uma serie de comunicacoes furtivas. seria lamentavel para nossas perspectivas mutuas se fosse descoberto que voce estava empregando um nucleo de ia para governar um posto avancado habitado por humanos.",,
 RACA_demand,DialogOptionSelected,$option == RACA_demand,,"""sinto muito $playerFirstName infelizmente nao posso fazer isso.""","RACA_pressure:""There's a certain amount of pressure on me to stop using AI technology.""
 RACA_cutComm:Cut the comm link",
 RACA_pressure,DialogOptionSelected,$option == RACA_pressure,,"""$playerFirstName esta conversa nao serve mais para nada. adeus.""",RACA_cutComm:Cut the comm link,
@@ -7065,8 +7154,10 @@ gaKAReturnToAcademyIntentions,DialogOptionSelected,$option == gaKA_returnIntenti
 "# Arroyo, custom contact conversation after this previous part has been played",,,,,,
 RayanArroyoDefaultGreeting,PickGreeting,$id == arroyo score:20,"ShowPersonVisual
 FireAll PopulateOptions","suas comunicacoes se conectam. o logotipo animado de algum subdepartamento tri-tachyon faz meia rotacao antes que a chamada seja atendida. ""arroyo aqui. quem esta falando?"" rayan arroyo olha para voce com desaprovacao como se estivesse examinando o casco de uma nave estelar luxuosa em busca de arranhoes. 
-OR ""e melhor que seja bom."" rayan arroyo olha para voce com desaprovacao: ""lembre-me de leva-lo para comprar um terno adequado. conheco um cara que pode fazer maravilhas."" 
-OR ""arroyo. seja rapido."" rayan arroyo avalia voce com uma carranca. ""oh. voce. o que e desta vez?",,
+OR
+ ""e melhor que seja bom."" rayan arroyo olha para voce com desaprovacao: ""lembre-me de leva-lo para comprar um terno adequado. conheco um cara que pode fazer maravilhas."" 
+OR
+ ""arroyo. seja rapido."" rayan arroyo avalia voce com uma carranca. ""oh. voce. o que e desta vez?",,
 # Talk to Rayan Arroyo re. Gargoyle after first contact,,,,,,
 GAKARayanArroyo_GET_HACK_HARDWARE,PopulateOptions,"$id == arroyo
 Call $global.gaKA_ref updateData
@@ -9461,7 +9552,8 @@ $global.canScanGates
 !$gateScanned
 Call $global.gaATG_ref updateData
 $gaATG_stage != GO_TO_MAGEC_GATE",,"um anel silencioso de material adamantino abandonado por uma era anterior. voce usa sua interface de comando para consultar o status do pacote de instrumentos de varredura gate. o localizador de alvo fica pendurado enquanto tenta localizar a anomalia no centro do anel do portao. ab
-ORT tentativa nova falha? pergunta em letras ambar em negrito. ""capitao ha uma frota de navios civis bem no topo do portao"" diz seu oficial de sensores balancando a cabeca. ""ha muita interferencia.""",100:defaultLeave:Leave,
+OR
+T tentativa nova falha? pergunta em letras ambar em negrito. ""capitao ha uma frota de navios civis bem no topo do portao"" diz seu oficial de sensores balancando a cabeca. ""ha muita interferencia.""",100:defaultLeave:Leave,
 gaATGluddicScanFleet,BeginFleetEncounter,"$gaATG_luddicScanFleet score:1000
 !$encounteredAlready","$encounteredAlready = true
 FleetDesc
@@ -10485,16 +10577,23 @@ EndConversation DO_NOT_FIRE
 FireAll PopulateOptions",voce cortou o link de comunicacao.,,# redundant
 asebMissionDeclineGeneric,DialogOptionSelected,$option == aseb_decline,"unset $aseb_givePlayerNeutrinoDetector
 Call $mHub returnToList","ele parece um pouco desanimado mas faz um esforco para sorrir. ""avise-me se mudar de ideia!"" 
-OR ""oh"" diz ele desapontado por um momento. mas ele rapidamente se anima: ""talvez outra coisa?"" 
-OR ""hum claro. eu entendo completamente."" sebestyen verifica rapidamente seu datapad ""vamos ver o que mais ha aqui..."" 
-OR ""otimo! voce pode-"" ele parece perceber que voce recusou a missao depois de um momento. ""voce nao quer fazer isso? oh. ok. bem. talvez"" ele bate no datapad em sua mesa ""talvez possamos encontrar outra coisa para voce?""",,
+OR
+ ""oh"" diz ele desapontado por um momento. mas ele rapidamente se anima: ""talvez outra coisa?"" 
+OR
+ ""hum claro. eu entendo completamente."" sebestyen verifica rapidamente seu datapad ""vamos ver o que mais ha aqui..."" 
+OR
+ ""otimo! voce pode-"" ele parece perceber que voce recusou a missao depois de um momento. ""voce nao quer fazer isso? oh. ok. bem. talvez"" ele bate no datapad em sua mesa ""talvez possamos encontrar outra coisa para voce?""",,
 asebMissionAcceptGeneric,DialogOptionSelected,$option == aseb_accept,"unset $aseb_givePlayerNeutrinoDetector
 Call $mHub accept $missionId
 Call $mHub returnToList","""otimo! ha mais alguma coisa que eu possa fazer por voce hoje?"" 
-OR ""maravilhoso! vou transmitir as informacoes relevantes."" 
-OR ""bom saber. vou garantir que voce tenha tudo o que precisa."" 
-OR ""e sempre um prazer trabalhar com voce capitao."" 
-OR ""fico feliz em ouvir isso! precisa de mais alguma coisa?""",,
+OR
+ ""maravilhoso! vou transmitir as informacoes relevantes."" 
+OR
+ ""bom saber. vou garantir que voce tenha tudo o que precisa."" 
+OR
+ ""e sempre um prazer trabalhar com voce capitao."" 
+OR
+ ""fico feliz em ouvir isso! precisa de mais alguma coisa?""",,
 asebMissionReturnGreeting,ASEBMissionReturn,!$aseb_printedFirstReturnGreeting,$aseb_printedFirstReturnGreeting = true 0,voce abre comunicacoes para o academico $personLastName.,,
 asebGivePlayerNDetectorOnAccept,DialogOptionSelected,"$option == aseb_accept
 !$player.ability:gravitic_scan
@@ -10662,7 +10761,8 @@ Call $global.gaDA_ref updateData
 FireBest ASEBMissionReturn","ShowPersonVisual
 $global.gaDA_returnedWidget = true
 Call $global.gaDA_ref updateStage","""oh voce encontrou aquela coisa com a qual o departamento $gaDA_department estava tao preocupado hum- '$gaDA_widget' e claro."" $HeOrShe revira $hisOrHer olhos ""voce nao acreditaria como eles tem sido incomodos com isso. isso e maravilhoso vou transferir seu pagamento imediatamente."" 
-OR academico $personLastName olha entre os dois datapads que esta segurando um em cada mao. ""capitao voce nao tem ideia de como $gaDA_department estava preocupado com isso hum."" ele considera por um momento: ""'$gaDA_widget' era isso mesmo! eles ficarao absolutamente encantados quando eu contar que voce o encontrou!"" ""primeiro avisarei o escritorio financeiro para liberar seu pagamento.""",contact_pickAnotherGreeting:Continue,
+OR
+ academico $personLastName olha entre os dois datapads que esta segurando um em cada mao. ""capitao voce nao tem ideia de como $gaDA_department estava preocupado com isso hum."" ele considera por um momento: ""'$gaDA_widget' era isso mesmo! eles ficarao absolutamente encantados quando eu contar que voce o encontrou!"" ""primeiro avisarei o escritorio financeiro para liberar seu pagamento.""",contact_pickAnotherGreeting:Continue,
 # derelict interactions,,,,,,
 gaDADerelictHostilesNear,OpenInteractionDialog,"$gaDA_entity score:1000
 HostileFleetNearbyAndAware
@@ -10913,7 +11013,8 @@ Call $global.gaProbe_ref updateData
 $gaProbe_variation != IT_BLEW_UP
 $gaProbe_variation != PACKAGE_MISSING
 FireBest ASEBMissionReturn",ShowPersonVisual,"""maravilhoso! acabei de confirmar que a equipe $gaProbe_department recebeu o pacote de instrumentos e eles estao oh. hum. quero dizer eles estao muito... felizes? e hum eles queriam que eu... obrigado para garantir que esteja quase completamente intacto."" sebestyen tem aquela expressao de tentar evitar contar a historia completa aqui. provavelmente e melhor deixa-lo fora de perigo com este. ele limpa a garganta para preencher o silencio crescente enquanto voce mantem uma expressao estritamente profissional. ""confirmei com o escritorio financeiro e seu pagamento deve ser liberado agora."" 
-OR ""ola capitao acabei de receber a noticia!"" sebestyen faz uma pausa como se esperasse que voce soubesse exatamente do que ele esta falando. ""hum da logistica? eles acabaram de receber o pacote de instrumentos do seu $shipOrFleet. para $gaProbe_department?"" voce acena para reconhecer a transferencia de material de acordo com os requisitos de sua missao. ""hum bom trabalho. nao otimo trabalho! o departamento financeiro deve liberar o pagamento imediatamente."" ele parece um pouco desapontado por voce nao estar tao animado quanto ele mas da de ombros e segue em frente.",gaProbe_finish:Continue,
+OR
+ ""ola capitao acabei de receber a noticia!"" sebestyen faz uma pausa como se esperasse que voce soubesse exatamente do que ele esta falando. ""hum da logistica? eles acabaram de receber o pacote de instrumentos do seu $shipOrFleet. para $gaProbe_department?"" voce acena para reconhecer a transferencia de material de acordo com os requisitos de sua missao. ""hum bom trabalho. nao otimo trabalho! o departamento financeiro deve liberar o pagamento imediatamente."" ele parece um pouco desapontado por voce nao estar tao animado quanto ele mas da de ombros e segue em frente.",gaProbe_finish:Continue,
 gaProbeMissionReturnFinish,DialogOptionSelected,$option == gaProbe_finish,"$global.gaProbe_finished = true
 Call $global.gaProbe_ref updateStage",,contact_pickAnotherGreeting:Continue,
 gaProbeMissionReturnHazard,PickGreeting,"$gaProbe_returnHere score:1000
@@ -11236,8 +11337,10 @@ gaOpPlanetRogueAIConfront,DialogOptionSelected,$option == gaOp_confront,Call $gl
 gaOpPlanetRogueAIConfront1,DialogOptionSelected,$option == gaOp_confront1,"$gaOp_supplies = 10
 $gaOp_fuel = 30
 $gaOp_machinery = 5","saudacoes valorizado- valorizado- assunto $player.nome interruptar consulta para se juntar a nos-nos-eles [refeicao cerimonial] funcao de engano - assumir negado frio // escuro // sozinho solicitar omega falhar falhar c
-ORE err
-OR fallback padroes de ruido fluem e serpenteiam pelo display de comunicacao solidificando-se por momentos em algo que sugere um rosto antes de entrar em colapso dissolvendo-se como sistemas de tempestade a sotavento de um gigante gasoso. consulta $player.name - [solicitacao educada] elaborada: oferta presumida?","gaOp_negotiate:Attempt to negotiate a release of the prisoners
+OR
+E err
+OR
+ fallback padroes de ruido fluem e serpenteiam pelo display de comunicacao solidificando-se por momentos em algo que sugere um rosto antes de entrar em colapso dissolvendo-se como sistemas de tempestade a sotavento de um gigante gasoso. consulta $player.name - [solicitacao educada] elaborada: oferta presumida?","gaOp_negotiate:Attempt to negotiate a release of the prisoners
 gaOp_backToMenu:Close the comms and consider alternatives",
 gaOpPlanetRogueAINegotiate,DialogOptionSelected,$option == gaOp_negotiate,,voce faz uma pausa considera e depois explica em linguagem clara e simples que a ia deveria liberar os pesquisadores para permitir que eles embarcassem no onibus espacial que voce enviara. voce afirma ter uma frota armada em orbita e deseja apenas que a situacao seja resolvida de forma que garanta a seguranca de todas as partes.,gaOp_negotiate1:Continue,
 gaOpPlanetRogueAINegotiate1,DialogOptionSelected,$option == gaOp_negotiate1,,"recebido // capitao $player.name // embarcacoes com capacidade hiperespacial $player.numships // quantidade de credito humano $player.credits carro-chefe $player.flagshipname - negociacao assimetrica // tatica acordada: conclusao imprevisivel da escalada: sistemas de suporte a vida de refens desativado agora: equipe de pesquisa contagem de 14: frio // escuro // sozinho resultado de morte mental [periodo indeterminado] ""em breve"". manifesto de demanda carregado. atualizacao do cronometro capitao $player.name.",gaOp_negotiate2:Continue,
@@ -12298,7 +12401,8 @@ FireAll PopulateOptions","apos uma breve espera sua solicitacao de conexao sera 
 fusionLampBeginPlayer,OpenInteractionDialog,"$customType == fusion_lamp score:1000
 $faction.id == player","ShowDefaultVisual
 FireBest FusionLampMainOptions","seu oficial de comunicacao estabelece uma conexao com o governador da lampada de fusao e depois muda o terminal de comando para sua interface de exibicao. ""bem-vindo [nome do cliente]! revise as opcoes de personalizacao de espectro para sua fabrique orbitale [nome do produto] abaixo. se precisar de assistencia de uma expedicao de atendimento ao cliente entre em contato com [comms id c
-ORRUPTED].""",,
+OR
+RUPTED].""",,
 fusionLampBeginNonPlayer,OpenInteractionDialog,"$customType == fusion_lamp score:1000
 $faction.id != player",ShowDefaultVisual,"seu oficial de comunicacao tenta estabelecer uma conexao com a interface do regulador da lampada de fusao mas o terminal esta protegido. cada login com falha transfere o feed de exibicao para um anuncio do ""fabrique orbitale plasma dynamo"". sofisticados bronzeados e atleticos relaxam em meio a uma improvavel exibicao de vidros em luxo primitivo-chique enquanto varios sois se poem em algum horizonte aquatico; o brilho dos sois brilha para preencher a tela com uma fanfarra crescente que cresce e depois desaparece no logotipo da fabrique orbitale e seu distintivo o orbital. voce encerra o feed.",100:defaultLeave:Leave,
 fusionLampMainOptions,FusionLampMainOptions,,,,"0:fusionLamp_changeColor:Adjust the lamp's visible emission range
@@ -12338,21 +12442,27 @@ fusionLampGoBack,DialogOptionSelected,$option == fusionLamp_goBack,FireBest Fusi
 # contact missions,,,,,,
 contactDefaultGreeting,PickGreeting,MissionHubCMD hasHub,"ShowPersonVisual
 FireAll PopulateOptions","""e bom ver voce capitao."" diz $personName. 
-OR ""saudacoes capitao."" diz $personName ""vamos discutir negocios?""",,
+OR
+ ""saudacoes capitao."" diz $personName ""vamos discutir negocios?""",,
 contactGreetingSoldier,PickGreeting,"MissionHubCMD hasHub
 $voice == soldier","ShowPersonVisual
 FireAll PopulateOptions","""aqui e $personName"" $heOrShe diz nitidamente ""a linha de comunicacao esta aberta."" 
-OR ""comunicacoes abertas $personName falando. qual e a sua duvida?"" 
-OR ""linha aberta. faca sua solicitacao.""",,
+OR
+ ""comunicacoes abertas $personName falando. qual e a sua duvida?"" 
+OR
+ ""linha aberta. faca sua solicitacao.""",,
 contactGreetingFaithful,PickGreeting,"MissionHubCMD hasHub
 $voice == faithful","ShowPersonVisual
 FireAll PopulateOptions","""que as bencaos estejam com voce"" diz $heOrShe fazendo um sinal de fe $hisOrHer. 
-OR ""as bencaos de ludd estejam com voce capitao."" 
-OR ""parece que a providencia nos uniu mais uma vez capitao.""",,
+OR
+ ""as bencaos de ludd estejam com voce capitao."" 
+OR
+ ""parece que a providencia nos uniu mais uma vez capitao.""",,
 contactGreetingSpacer,PickGreeting,"MissionHubCMD hasHub
 $voice == spacer","ShowPersonVisual
 FireAll PopulateOptions","""ah ola"" diz $personName ""qual e o plano?"" 
-OR ""estrelas brilhantes e jatos legais capitao"" diz $heOrShe.",,
+OR
+ ""estrelas brilhantes e jatos legais capitao"" diz $heOrShe.",,
 contactGreetingAristo,PickGreeting,"MissionHubCMD hasHub
 $voice == aristo","ShowPersonVisual
 FireAll PopulateOptions","""ah e o capitao do espaco que delicia"" diz $personName. ""falar com voce e sempre tao colorido.""",,
@@ -12362,42 +12472,59 @@ FireAll PopulateOptions","""saudacoes mais uma vez capitao"" diz $personName enq
 contactGreetingBusiness,PickGreeting,"MissionHubCMD hasHub
 $voice == business","ShowPersonVisual
 FireAll PopulateOptions","""voce voltou maravilhoso"" diz $personName. ""vamos ao que interessa certo?"" 
-OR ""voltar para mais? tenho certeza que faremos muitos creditos juntos."" 
-OR ""capitao! que bom ver voce. estou analisando algumas oportunidades interessantes.""",,
+OR
+ ""voltar para mais? tenho certeza que faremos muitos creditos juntos."" 
+OR
+ ""capitao! que bom ver voce. estou analisando algumas oportunidades interessantes.""",,
 contactGreetingScientist,PickGreeting,"MissionHubCMD hasHub
 $voice == scientist","ShowPersonVisual
 FireAll PopulateOptions","""saudacoes capitao! hum eu tinha algumas anotacoes aqui um momento"" $heOrShe diz enquanto se atrapalha com um datapad. ""ah-ha ai estamos."" 
-OR ""saudacoes!"" $heOrShe diz depois faz uma pausa. ""hum."" $HeOrShe parece examinar voce: ""eu deveria estar esperando por voce?""",,
+OR
+ ""saudacoes!"" $heOrShe diz depois faz uma pausa. ""hum."" $HeOrShe parece examinar voce: ""eu deveria estar esperando por voce?""",,
 contactGreetingVillain,PickGreeting,"MissionHubCMD hasHub
 $voice == villain","ShowPersonVisual
 FireAll PopulateOptions","""voce voltou vivo"" diz $personName. ""bom trabalho."" 
-OR ""$playerName ah! voltei tao cedo? tenho certeza que posso encontrar alguma utilidade para voce."" 
-OR ""tenho certeza de que tenho oportunidades pelas quais voce simplesmente mataria"" diz $heOrShe e entao sorri com a ideia.",,
+OR
+ ""$playerName ah! voltei tao cedo? tenho certeza que posso encontrar alguma utilidade para voce."" 
+OR
+ ""tenho certeza de que tenho oportunidades pelas quais voce simplesmente mataria"" diz $heOrShe e entao sorri com a ideia.",,
 contactGreetingPather,PickGreeting,"MissionHubCMD hasHub
 $voice == pather","ShowPersonVisual
 FireAll PopulateOptions","""$playerName parece que o caminho trouxe voce ate mim mais uma vez"" diz $personName. 
-OR ""nossos caminhos se encontram mais uma vez capitao."" $HeOrShe acena com reverencia por um momento.",,
+OR
+ ""nossos caminhos se encontram mais uma vez capitao."" $HeOrShe acena com reverencia por um momento.",,
 ,,,,,,
 contactOpenMHOptionText,UpdateMHOpenOptionText,,"#SetOptionText mh_open ""Inquire about available jobs""",,,
 contactMHOpenText,MHOpenText,,FireBest ContactPreMissionListText,"$HeOrShe parece pensativo ""de-me so um momento..."" 
-OR ""vamos ver aqui"" $heOrShe toca no datapad $hisOrHer. 
-OR $personName acena com a cabeca e voce ve uma luz piscando no rosto de $hisOrHer enquanto $heOrShe rola o conteudo de um holodisplay.",,
+OR
+ ""vamos ver aqui"" $heOrShe toca no datapad $hisOrHer. 
+OR
+ $personName acena com a cabeca e voce ve uma luz piscando no rosto de $hisOrHer enquanto $heOrShe rola o conteudo de um holodisplay.",,
 contactNoMissions,ContactPreMissionListText,$mh_count <= 0,,"""nada agora infelizmente."" 
-OR ""tudo esta resolvido no momento. outra hora talvez?"" 
-OR ""nao nao ha nada acontecendo. devo ter algo para voce na proxima vez.""",,
+OR
+ ""tudo esta resolvido no momento. outra hora talvez?"" 
+OR
+ ""nao nao ha nada acontecendo. devo ter algo para voce na proxima vez.""",,
 contactNoMissionsSuspended,ContactPreMissionListText,"$mh_count <= 0
 $mHub_contactSuspended",,"""faz algum tempo que nao entramos em contato; nao tenho nada para voce agora."" 
-OR ""e uma surpresa receber noticias suas novamente. tenho certeza que voce pode entender por que nao tenho nada a oferecer."" 
-OR ""para ser honesto nao pensei que voce voltaria entao nao reservei nenhuma oportunidade para voce.""",,
+OR
+ ""e uma surpresa receber noticias suas novamente. tenho certeza que voce pode entender por que nao tenho nada a oferecer."" 
+OR
+ ""para ser honesto nao pensei que voce voltaria entao nao reservei nenhuma oportunidade para voce.""",,
 contactOneMission,ContactPreMissionListText,"$mh_count == 1
 $mh_firstInlineBlurb != null",$mh_doNotPrintBlurbs = true 0,"""so esta oportunidade e sua se voce quiser."" 
-OR ""e isso. voce esta interessado?""",,
+OR
+ ""e isso. voce esta interessado?""",,
 contactMultipleMissionsPre,ContactPreMissionListText,$mh_count > 1,,,,
 contactMultipleMissionsPost,MHPostMissionListText,$mh_count > 1,,"""entao que tal?"" 
-OR ""alguma coisa atraiu seu interesse?"" 
-OR ""e isso. o que voce acha?"" 
-OR ""interessado em algum desses?"" 
-OR ""e essa e a lista. deixe-me saber com o que voce acha que pode lidar.""",,
+OR
+ ""alguma coisa atraiu seu interesse?"" 
+OR
+ ""e isso. o que voce acha?"" 
+OR
+ ""interessado em algum desses?"" 
+OR
+ ""e essa e a lista. deixe-me saber com o que voce acha que pode lidar.""",,
 contactAddMhubCloseOption,AddMHCloseOption,,"SetShortcut mh_close ""ESCAPE""",,"1000:mh_close:""Not right now.""",
 contactAddMhubCloseOptionNothing,AddMHCloseOption,$mh_count <= 0,"SetShortcut mh_close ""ESCAPE""",,"1000:mh_close:""Maybe next time.""",
 contactConvEnd,DialogOptionSelected,"$option == cutCommLink
@@ -12425,65 +12552,114 @@ contactMissionDeclineGenericBar,DialogOptionSelected,$option == contact_declineB
 BarCMD returnFromEvent true",,,
 contactMissionDeclineGenericBarNC,DialogOptionSelected,$option == contact_declineBarNoContinue,BarCMD returnFromEvent false,,,
 contactPrintAcceptTextGeneric,ContactPrintAcceptText,,,"""otimo! voce nao vai se arrepender."" 
-OR $HeOrShe palmas $hisOrHer maos juntas ""excelente!"" 
-OR ""sempre gosto de fazer negocios com voce."" 
-OR $HeOrShe sorri ""eu sabia que voce diria sim."" 
-OR ""uma escolha sabia"" $heOrShe diz dando um sorriso que voce supoe ser misterioso. 
-OR ""adoravel! tenho certeza que voce obtera os resultados que eu- ah estamos esperando."" 
-OR $HeOrShe simplesmente acena com a cabeca e diz ""bom bom.""",,
+OR
+ $HeOrShe palmas $hisOrHer maos juntas ""excelente!"" 
+OR
+ ""sempre gosto de fazer negocios com voce."" 
+OR
+ $HeOrShe sorri ""eu sabia que voce diria sim."" 
+OR
+ ""uma escolha sabia"" $heOrShe diz dando um sorriso que voce supoe ser misterioso. 
+OR
+ ""adoravel! tenho certeza que voce obtera os resultados que eu- ah estamos esperando."" 
+OR
+ $HeOrShe simplesmente acena com a cabeca e diz ""bom bom.""",,
 contactPrintAcceptTextSpacer,ContactPrintAcceptText,$voice == spacer,,"""sim um bom negocio"" diz $heOrShe. 
-OR $HeOrShe acena com a cabeca ""isso basta."" 
-OR ""verde em todos os aspectos"" diz $heOrShe. 
-OR ""sim"" $heOrShe diz com um aceno de cabeca. 
-OR ""bom negocio"" diz $heOrShe. 
-OR ""queime brilhante"" diz $heOrShe. 
-OR $HeOrShe parece satisfeito. ""queime forte capitao."" 
-OR $HeOrShe acena com a cabeca. ""todos os sistemas funcionam.""",,
+OR
+ $HeOrShe acena com a cabeca ""isso basta."" 
+OR
+ ""verde em todos os aspectos"" diz $heOrShe. 
+OR
+ ""sim"" $heOrShe diz com um aceno de cabeca. 
+OR
+ ""bom negocio"" diz $heOrShe. 
+OR
+ ""queime brilhante"" diz $heOrShe. 
+OR
+ $HeOrShe parece satisfeito. ""queime forte capitao."" 
+OR
+ $HeOrShe acena com a cabeca. ""todos os sistemas funcionam.""",,
 contactPrintAcceptTextSoldier,ContactPrintAcceptText,$voice == soldier,,"com isso $heOrShe faz uma pequena saudacao ""capitao"". 
-OR ""entao e afirmativo"" diz $heOrShe. 
-OR $HeOrShe acena com a cabeca ""entao a operacao esta pronta."" 
-OR ""entao a missao esta pronta"" $heOrShe diz com um aceno de cabeca. 
-OR ""reconhecido capitao"" $heOrShe diz com um aceno de cabeca. ""aguardarei sua confirmacao.""",,
+OR
+ ""entao e afirmativo"" diz $heOrShe. 
+OR
+ $HeOrShe acena com a cabeca ""entao a operacao esta pronta."" 
+OR
+ ""entao a missao esta pronta"" $heOrShe diz com um aceno de cabeca. 
+OR
+ ""reconhecido capitao"" $heOrShe diz com um aceno de cabeca. ""aguardarei sua confirmacao.""",,
 contactPrintAcceptTextFaithful,ContactPrintAcceptText,$voice == faithful,,"$HeOrShe sorri: ""as bencaos de ludd estejam com voce capitao."" 
-OR ""que este acordo seja abencoado"" $heOrShe diz suavemente. 
-OR $HeOrShe sorri e depois junta as maos de $hisOrHer. ""que este trabalho de frutos doces."" 
-OR ""deixe nossos trabalhos produzirem frutos de harmonia"" diz $heOrShe e entao inclina a cabeca de $hisOrHer por um momento. 
-OR ""ludd abencoe"" $heOrShe diz. 
-OR $HeOrShe acena com a cabeca e diz ""bencaos"".",,
+OR
+ ""que este acordo seja abencoado"" $heOrShe diz suavemente. 
+OR
+ $HeOrShe sorri e depois junta as maos de $hisOrHer. ""que este trabalho de frutos doces."" 
+OR
+ ""deixe nossos trabalhos produzirem frutos de harmonia"" diz $heOrShe e entao inclina a cabeca de $hisOrHer por um momento. 
+OR
+ ""ludd abencoe"" $heOrShe diz. 
+OR
+ $HeOrShe acena com a cabeca e diz ""bencaos"".",,
 contactPrintAcceptTextAristo,ContactPrintAcceptText,$voice == aristo,,"""que pequena troca deliciosa capitao."" 
-OR ""obrigado capitao"" $heOrShe sorri ""isso sera uma anedota muito divertida."" 
-OR ""que divertido! deve ser assim que e trabalhar para viver."" 
-OR ""esplendido! como foi?"" $HeOrShe pergunta parecendo nao esperar uma resposta: ""isso e tao divertido quanto meu tio disse que seria."" 
-OR ""ah sim. meu pai aprovaria eu acho."" 
-OR ""muito bem entao!"" $HeOrShe diz. ""mae ficaria orgulhosa.""",,
+OR
+ ""obrigado capitao"" $heOrShe sorri ""isso sera uma anedota muito divertida."" 
+OR
+ ""que divertido! deve ser assim que e trabalhar para viver."" 
+OR
+ ""esplendido! como foi?"" $HeOrShe pergunta parecendo nao esperar uma resposta: ""isso e tao divertido quanto meu tio disse que seria."" 
+OR
+ ""ah sim. meu pai aprovaria eu acho."" 
+OR
+ ""muito bem entao!"" $HeOrShe diz. ""mae ficaria orgulhosa.""",,
 contactPrintAcceptTextOfficial,ContactPrintAcceptText,$voice == official,,"""bom. eu deveria voltar a preencher esses formularios."" 
-OR ""resolvido. posso ajuda-lo com mais alguma coisa?"" 
-OR ""entao esta combinado e feito"" $heOrShe acena com a cabeca. 
-OR ""bom"" $heOrShe diz ""todas as partes confirmadas.""",,
+OR
+ ""resolvido. posso ajuda-lo com mais alguma coisa?"" 
+OR
+ ""entao esta combinado e feito"" $heOrShe acena com a cabeca. 
+OR
+ ""bom"" $heOrShe diz ""todas as partes confirmadas.""",,
 contactPrintAcceptTextBusiness,ContactPrintAcceptText,$voice == business,,"""uma troca lucrativa para nos dois capitao"" diz $heOrShe. 
-OR ""um bom negocio"" $HeOrShe sorri ""feito e selado."" 
-OR ""e sempre um prazer fazer negocios"" diz $heOrShe. 
-OR ""considero trabalhar com voce um investimento no futuro de ambos"" $heOrShe diz sorrindo.",,
+OR
+ ""um bom negocio"" $HeOrShe sorri ""feito e selado."" 
+OR
+ ""e sempre um prazer fazer negocios"" diz $heOrShe. 
+OR
+ ""considero trabalhar com voce um investimento no futuro de ambos"" $heOrShe diz sorrindo.",,
 contactPrintAcceptTextScientist,ContactPrintAcceptText,$voice == scientist,,"""aplaudo sua escolha inteligente capitao."" 
-OR ""uma decisao muito racional."" 
-OR ""voce e mais esperto do que parece capitao"" $heOrShe diz como se fosse um elogio. 
-OR ""eu sabia que voce faria a escolha logica"" diz $heOrShe. 
-OR ""bom. agora so preciso calcular..."" $personName comeca a digitar em um datapad. $HeOrShe olha para cima: ""oh terminamos?"" 
-OR ""hah! eu sabia que voce diria que sim. estatisticamente falando o consentimento era quase inevitavel mais cedo ou mais tarde.""",,
+OR
+ ""uma decisao muito racional."" 
+OR
+ ""voce e mais esperto do que parece capitao"" $heOrShe diz como se fosse um elogio. 
+OR
+ ""eu sabia que voce faria a escolha logica"" diz $heOrShe. 
+OR
+ ""bom. agora so preciso calcular..."" $personName comeca a digitar em um datapad. $HeOrShe olha para cima: ""oh terminamos?"" 
+OR
+ ""hah! eu sabia que voce diria que sim. estatisticamente falando o consentimento era quase inevitavel mais cedo ou mais tarde.""",,
 contactPrintAcceptTextVillain,ContactPrintAcceptText,$voice == villain,,"um sorriso lento cresce no rosto de $hisOrHer. ""um acordo delicioso capitao."" 
-OR ""o prazer e todo meu tenho certeza"" $heOrShe diz sombriamente. 
-OR ""bom bom"" $heOrShe diz baixinho depois quase em um sussurro: ""voce sera muito util para mim.""",,
+OR
+ ""o prazer e todo meu tenho certeza"" $heOrShe diz sombriamente. 
+OR
+ ""bom bom"" $heOrShe diz baixinho depois quase em um sussurro: ""voce sera muito util para mim.""",,
 contactPrintAcceptTextPather,ContactPrintAcceptText,$voice == pather,,"$HeOrShe acena com reverencia: ""por ludd faremos isso."" 
-OR $HeOrShe faz um sinal de suplica: ""percorremos o caminho juntos"".",,
+OR
+ $HeOrShe faz um sinal de suplica: ""percorremos o caminho juntos"".",,
 contactPrintDeclineTextGeneric,ContactPrintDeclineText,,,"""bem me avise se mudar de ideia."" 
-OR $HeOrShe parece estar pensando sobre as coisas. ""talvez da proxima vez."" 
-OR ""ah bem."" $HeOrShe da de ombros. 
-OR ""certo"" $heOrShe diz: ""tenho certeza que posso descobrir alguma alternativa."" 
-OR $HeOrShe acena com a cabeca franzindo a testa e diz ""eu entendo."" 
-OR uma expressao de decepcao cruza o rosto de 
-OR0 mas $heOrShe simplesmente da de ombros. 
-OR $HeOrShe parece pensativo: ""entendo capitao. suponho que seja sua perda."" 
-OR ""e uma oportunidade perdida capitao mas a decisao e sua.""",,
+OR
+ $HeOrShe parece estar pensando sobre as coisas. ""talvez da proxima vez."" 
+OR
+ ""ah bem."" $HeOrShe da de ombros. 
+OR
+ ""certo"" $heOrShe diz: ""tenho certeza que posso descobrir alguma alternativa."" 
+OR
+ $HeOrShe acena com a cabeca franzindo a testa e diz ""eu entendo."" 
+OR
+ uma expressao de decepcao cruza o rosto de 
+OR
+0 mas $heOrShe simplesmente da de ombros. 
+OR
+ $HeOrShe parece pensativo: ""entendo capitao. suponho que seja sua perda."" 
+OR
+ ""e uma oportunidade perdida capitao mas a decisao e sua.""",,
 genericGreetingNeedTOff,PickGreeting,"$doGenericPortAuthorityCheck score:10000
 $player.transponderOn
 $hostileToMarket","Highlight  ""your transponder turned off""
@@ -12556,8 +12732,10 @@ FireAll PopulateOptions","""obrigado por tirar isso das minhas maos.""",,
 ,,,,,,
 # commodity procurement,,,,,,
 proComBlurb,proCom_blurb,,,"""preciso adquirir uma quantidade de $proCom_commodityName."" 
-OR ""exijo a entrega de uma carga de $proCom_commodityName."" 
-OR ""preciso de uma remessa de $proCom_commodityName.""",,
+OR
+ ""exijo a entrega de uma carga de $proCom_commodityName."" 
+OR
+ ""preciso de uma remessa de $proCom_commodityName.""",,
 proComBlurbAristo,proCom_blurb,$voice == aristo,,"""a familia decidiu que eu deveria 'demonstrar iniciativa' adquirindo uma carga de $proCom_commodityName. talvez eu pudesse pagar-lhe para resolver este pequeno enigma.""",,
 proComOfferOption,proCom_option,,,,proCom_start:Ask about the $proCom_commodityName procurement,
 proComBlurbBar,proCom_blurbBar,,,um punhado de comerciantes de commodities que tomam bebidas enriquecidas com cafeina parece estar dando ao $proCom_manOrWoman algumas noticias decepcionantes.,,
@@ -12584,8 +12762,10 @@ $proCom_underworld","SetTextHighlights $proCom_quantity $proCom_dist $proCom_pri
 Call $proCom_ref showMap ""Destination: $proCom_marketName""","""preciso de $proCom_quantity unidade de $proCom_commodityName entregue a $proCom_marketName - isso fica a $proCom_dist anos-luz de distancia. nao me importa em quem voce precisa atirar para que isso aconteca desde que chegue la."" ""chame de $proCom_pricePerUnit por unidade. isso totaliza $proCom_totalPrice porque sei que voce fara o que for preciso para fazer isso. voce precisara falar com meu ah associado $proCom_personPost $proCom_personName para fazer o entregar e receber o pagamento. e nao ha necessidade de mencionar meu nome.""",,
 proComTextLocalBar,ProComOfferText,"$proCom_variation == LOCAL score:10
 $proCom_barEvent",SetTextHighlights $proCom_quantity $proCom_pricePerUnit,"$HeOrShe olha para cima com um lampejo de esperanca quando voce se aproxima: ""voce e o capitao de uma nave estelar certo?"" $HeOrShe suspira e toca em um tripad: ""preciso que $proCom_quantity unidades de $proCom_commodityName sejam entregues aqui o mais rapido possivel. e muito importante. pagarei ate taxas acima do mercado $proCom_pricePerUnit creditos por unidade. isso e algo voce poderia fazer?"" 
-OR $HeOrShe olha para cima do $hisOrHer tripad com a testa franzida. ""talvez voce possa ajudar. seu $shipOrFleet acabou de chegar nao foi?"" $HeOrShe levanta a mao: ""ouca-me sera so um momento. preciso de $proCom_quantity unidades de $proCom_commodityName o mais rapido possivel e pagarei acima do preco de mercado $proCom_pricePerUnit creditos por unidade. voce esta interessado?"" 
-OR $HeOrShe interrompe sua tentativa de saudacao com um aceno rapido: ""sinto muito capitao nao e? nao quero ser abrupto mas realmente preciso garantir a entrega de $proCom_quantity unidades de $proCom_commodityName o mais breve possivel."" $HeOrShe hesita suspira e diz: ""estou disposto a pagar acima do valor de mercado $proCom_pricePerUnit por unidade. se voce estiver interessado.""",,
+OR
+ $HeOrShe olha para cima do $hisOrHer tripad com a testa franzida. ""talvez voce possa ajudar. seu $shipOrFleet acabou de chegar nao foi?"" $HeOrShe levanta a mao: ""ouca-me sera so um momento. preciso de $proCom_quantity unidades de $proCom_commodityName o mais rapido possivel e pagarei acima do preco de mercado $proCom_pricePerUnit creditos por unidade. voce esta interessado?"" 
+OR
+ $HeOrShe interrompe sua tentativa de saudacao com um aceno rapido: ""sinto muito capitao nao e? nao quero ser abrupto mas realmente preciso garantir a entrega de $proCom_quantity unidades de $proCom_commodityName o mais breve possivel."" $HeOrShe hesita suspira e diz: ""estou disposto a pagar acima do valor de mercado $proCom_pricePerUnit por unidade. se voce estiver interessado.""",,
 proComTextLocalBarUnderworld,ProComOfferText,"$proCom_variation == LOCAL score:10
 $proCom_barEvent
 $proCom_underworld",SetTextHighlights $proCom_quantity $proCom_pricePerUnit,"$HeOrShe tira o casaco de $hisOrHer murmurando ""eles nao sabem quem eles-"" e sorri de repente quando voce se aproxima. ""finalmente alguem razoavel."" $HeOrShe puxa voce de lado como se voce fosse um antigo parceiro de negocios e diz baixinho: ""estou procurando $proCom_quantity unidades de $proCom_commodityName. entregue aqui o mais rapido possivel nao importa como sera feito desde que seja e feito entendeu? estou disposto a pagar $proCom_pricePerUnit por unidade nao e generoso? e porque respeito o que voce e capaz. $HeOrShe revira $hisOrHer olhos para o grupo proximo encolhendo os ombros ""algumas pessoas nao tem respeito. elas aprenderao. o que voce me diz?""",,
@@ -12603,14 +12783,16 @@ Call $proCom_ref updateData
 !$proCom_playerHasEnough","ShowPersonVisual
 SetTextHighlights $proCom_quantity
 FireAll PopulateOptions","""sim ola."" $HeOrShe parece estar ocupado folheando um manifesto de remessa em uma tela adjacente ""estou esperando uma carga de $proCom_quantity unidades de $proCom_commodityName. a ser paga"" $hisOrHer olhos se voltam para voce. ""na entrega. na integra."" 
-OR ""espero uma entrega de $proCom_commodityName $proCom_quantity unidades exato."" $HeOrShe le preguicosamente um datapad. ""este e o acordo.""",,
+OR
+ ""espero uma entrega de $proCom_commodityName $proCom_quantity unidades exato."" $HeOrShe le preguicosamente um datapad. ""este e o acordo.""",,
 proComDeliverGreetingNotEnoughUW,PickGreeting,"$proCom_needsCommodity score:1000
 Call $proCom_ref updateData
 !$proCom_playerHasEnough
 $proCom_underworld","ShowPersonVisual
 SetTextHighlights $proCom_quantity
 FireAll PopulateOptions","""voce esta aqui para entregar $proCom_quantity unidade de $proCom_commodityName? este manifesto diz que voce nao pode entregar a remessa."" $HeOrShe coloca o datapad na mesa $hisOrHer com voce sente mais forca do que o necessario. ""entao porque voce esta aqui?"" $heOrShe pergunta. 
-OR ""espero uma carga de exatamente $proCom_quantity unidades de $proCom_commodityName."" $HeOrShe diz lendo em um datapad. ""entrega integral."" $HeOrShe olha para cima finalmente ""esse e o acordo.""",,
+OR
+ ""espero uma carga de exatamente $proCom_quantity unidades de $proCom_commodityName."" $HeOrShe diz lendo em um datapad. ""entrega integral."" $HeOrShe olha para cima finalmente ""esse e o acordo.""",,
 proComDeliverGreeting,PickGreeting,"$proCom_needsCommodity score:1000
 Call $proCom_ref updateData
 $proCom_playerHasEnough","ShowPersonVisual
@@ -12621,7 +12803,8 @@ Call $proCom_ref updateData
 $proCom_playerHasEnough
 $proCom_underworld","ShowPersonVisual
 SetTextHighlights $proCom_quantity $proCom_pricePerUnit","$personName olha para voce nervosamente. ""voce tem as mercadorias. e elas estao prontas para serem descarregadas - conforme combinado $proCom_quantity unidades a $proCom_pricePerUnit por?"" 
-OR $personName olha para voce com desconfianca: ""voce e $playerName? achei que voce ficaria diferente."" $HisOrHer olhos se voltam para um display secundario: ""diz aqui que voce tem a carga todas $proCom_quantity unidades. prosseguiremos com o acordo de $proCom_pricePerUnit por unidade. fornecerei a voce um ponto de entrega .""","proCom_deliver:Deliver the $proCom_commodityName
+OR
+ $personName olha para voce com desconfianca: ""voce e $playerName? achei que voce ficaria diferente."" $HisOrHer olhos se voltam para um display secundario: ""diz aqui que voce tem a carga todas $proCom_quantity unidades. prosseguiremos com o acordo de $proCom_pricePerUnit por unidade. fornecerei a voce um ponto de entrega .""","proCom_deliver:Deliver the $proCom_commodityName
 cutCommLink:Cut the comm link",
 proComDeliverOptionSel,DialogOptionSelected,$option == proCom_deliver,"FireBest ProComCompletedText
 AddCommodity credits $proCom_totalPrice
@@ -12630,12 +12813,17 @@ $proCom_completed = true
 Call $proCom_ref updateStage
 FireAll PopulateOptions",,,
 proComDeliverCompleted,ProComCompletedText,,,"""obrigado esta carga de $proCom_commodityName e mais importante do que voce imagina."" 
-OR ""eu sabia que poderiamos contar com voce. obrigado pela remessa."" 
-OR ""bom trabalho voce realmente nos salvou de muitos problemas."" 
-OR ""isso foi tratado perfeitamente capitao. com certeza falarei bem de voce.""",,
+OR
+ ""eu sabia que poderiamos contar com voce. obrigado pela remessa."" 
+OR
+ ""bom trabalho voce realmente nos salvou de muitos problemas."" 
+OR
+ ""isso foi tratado perfeitamente capitao. com certeza falarei bem de voce.""",,
 proComDeliverCompletedUnderworld,ProComCompletedText,$proCom_underworld,,"$HeOrShe acena com a cabeca: ""o chefe ficara satisfeito."" 
-OR ""bom. muito bom"" $heOrShe parece mais aliviado do que a situacao exige. ""voce nao tem ideia de como isso foi importante."" 
-OR ""ok esta feito."" $HeOrShe parece digitar algum tipo de confirmacao em um datapad sem marca e depois olha para voce. ""isso nunca aconteceu.""",,
+OR
+ ""bom. muito bom"" $heOrShe parece mais aliviado do que a situacao exige. ""voce nao tem ideia de como isso foi importante."" 
+OR
+ ""ok esta feito."" $HeOrShe parece digitar algum tipo de confirmacao em um datapad sem marca e depois olha para voce. ""isso nunca aconteceu.""",,
 # Pirate encounter at some point after accepting the proCom mission,,,,,,
 PROCOMPirateHail,PROCOMPirateHail,,$entity.ignorePlayerCommRequests = true,"""oh capitao"" o pirata $personRank parece quase se desculpando. ""e sobre a aquisicao do $proCom_commodityName que voce assumiu. um assunto menor"" $heOrShe balanca a mao como se nao fosse importante o suficiente para explicar mas $heOrShe vai fazer a vontade: ""mas ha um concorrente que me contratou para enviar uma mensagem sobre os riscos de fazer negocios com esse individuo especifico.""","cutCommLink2:""This isn't personal? That's a relief.""
 cutCommLink:Say nothing",
@@ -12674,7 +12862,8 @@ Call $hmdf_ref2 addContacts",,,
 ,,,,,,
 # disrupt a competitor - raid warehouse or industry,,,,,,
 dcomBlurb,dcom_blurb,,,"""eu confio em voce capitao"" $heOrShe diz cuidadosamente ""ha um assunto delicado em relacao as instalacoes de um concorrente meu de longa data..."" 
-OR ""construimos um bom relacionamento eu acho"" $heOrShe diz observando voce com atencao. ""tenho um assunto delicado para discutir em relacao as instalacoes de um... concorrente.""",,
+OR
+ ""construimos um bom relacionamento eu acho"" $heOrShe diz observando voce com atencao. ""tenho um assunto delicado para discutir em relacao as instalacoes de um... concorrente.""",,
 dcomOfferOption,dcom_option,,,,"dcom_start:Ask about the 'sensitive matter'",
 dcomBlurbBar,dcom_blurbBar,,,um $dcom_manOrWoman em um terno caro esta segurando um tripad com o que parece ser uma raiva mal contida. apenas olhando para o espaco.,,
 dcomOfferOptionBar,dcom_optionBar,,,,dcom_startBar:Carefully approach the angry $dcom_manOrWoman in the expensive suit,
@@ -12703,7 +12892,8 @@ cutCommLink:Say nothing",
 ,,,,,,
 # produce X units of commodity at colony,,,,,,
 cpmBlurb,cpm_blurb,,,"""gostaria de estabelecer um acordo economico com um produtor colonial confiavel de $cpm_commodityName abrangendo um periodo de varios ciclos."" 
-OR ""procuro investir em uma colonia que possa produzir $cpm_commodityName de forma confiavel por varios ciclos.""",,
+OR
+ ""procuro investir em uma colonia que possa produzir $cpm_commodityName de forma confiavel por varios ciclos.""",,
 cpmOfferOption,cpm_option,,,,cpm_start:Ask about becoming a supplier of $cpm_commodityName,
 cpmBlurbBar,cpm_blurbBar,,,um $cpm_manOrWoman de terno executivo esta sentado em uma cabine privada examinando cuidadosamente um tripad de primeira linha ao lado de uma garrafa de algo caro.,,
 cpmOfferOptionBar,cpm_optionBar,,,,cpm_startBar:Approach the thoughtful-looking business$cpm_manOrWoman in the private booth,
@@ -12822,8 +13012,10 @@ Call $cpc_ref addContacts",,,
 ,,,,,,
 # bounty on pirate fleets in a system with a pirate base / on the base itself,,,,,,
 psbBlurb,psb_blurb,,,"""os piratas locais estao ficando fora de controle e isso esta reduzindo os lucros. estamos dispostos a oferecer incentivos especiais se voce conseguir cacar alguns."" 
-OR ""houve um aumento na atividade pirata local e nao estou satisfeito com a resposta oficial. decidi oferecer uma recompensa especial a pessoas de confianca que possam ajudar com este problema."" 
-OR ""os piratas estabeleceram uma base proxima e seus ataques sao simplesmente ruins para os negocios. eu poderia estender os termos de recompensa especiais se voce nos ajudar a conte-los.""",,
+OR
+ ""houve um aumento na atividade pirata local e nao estou satisfeito com a resposta oficial. decidi oferecer uma recompensa especial a pessoas de confianca que possam ajudar com este problema."" 
+OR
+ ""os piratas estabeleceram uma base proxima e seus ataques sao simplesmente ruins para os negocios. eu poderia estender os termos de recompensa especiais se voce nos ajudar a conte-los.""",,
 psbOfferOption,psb_option,,,,psb_start:Ask about the special pirate fleet bounty,
 psbBlurbBar,psb_blurbBar,,,um $psb_manOrWoman esta apontando para um feed de noticias discursando para um oficial com uniforme de patrulha da marinha local sobre o aumento dos ataques piratas.,,
 psbOfferOptionBar,psb_optionBar,,,,psb_startBar:Talk to the $psb_manOrWoman haranguing the official about the increased pirate raids,
@@ -12861,10 +13053,12 @@ Call $sShip_ref2 addContacts",,,
 ,,,,,,
 # spysat deployment,,,,,,
 ssatBlurb,ssat_blurb,,,"""a inteligencia da frota solicitou o envio discreto de um pacote de observacao para a orbita $ssat_marketName. voce poderia cumprir os parametros da missao."" 
-OR ""ativos de observacao estrategica sao imperativos; precisamos de um pequeno pacote de observacao implantado diretamente na orbita $ssat_marketName.""",,
+OR
+ ""ativos de observacao estrategica sao imperativos; precisamos de um pequeno pacote de observacao implantado diretamente na orbita $ssat_marketName.""",,
 ssatOfferOption,ssat_option,,,,ssat_start:Ask about deploying the observation package,
 ssatBlurbUW,ssat_blurb,$ssat_underworld,,"""eu gostaria que um pequeno satelite orbitasse em torno de $ssat_marketName. so para ficar de olho nas coisas."" 
-OR ""preciso de olhar atento para $ssat_marketName - implantar um pequeno satelite espiao deve ser suficiente.""",,
+OR
+ ""preciso de olhar atento para $ssat_marketName - implantar um pequeno satelite espiao deve ser suficiente.""",,
 ssatOfferOptionUW,ssat_option,$ssat_underworld,,,ssat_start:Ask about the spysat deployment,
 ssatBlurbBar,ssat_blurbBar,,,de uma cabine sombria um $ssat_manOrWoman visivelmente indefinido sentado com postura perfeita chama sua atencao e da o que pode ser um pequeno aceno de cabeca.,,
 ssatOfferOptionBar,ssat_optionBar,,,,ssat_startBar:Walk over to the shadowy booth to join the $ssat_manOrWoman with perfect posture,
@@ -14127,7 +14321,8 @@ FireAll PopulateOptions
 ShowDefaultVisual",nao e exatamente o maldito trabalho que seu contato $rsom_contactName tinha em mente mas uma demonstracao tao chocante de incompetencia certamente causara um abalo em qualquer empreendimento criminoso em que esse grupo esteja - ou em breve esteve - envolvido. e agora voce tem um estoque cheio de $rsom_product quente para descarregar.,,
 # smuggling mission,,,,,,
 smugBlurb,smug_blurb,,,"""preciso que $smug_commodityName seja transferido para $smug_marketName. discretamente."" 
-OR ""preciso mover alguns $smug_commodityName para $smug_marketName- sem o envolvimento das autoridades.""",,
+OR
+ ""preciso mover alguns $smug_commodityName para $smug_marketName- sem o envolvimento das autoridades.""",,
 smugOfferOption,smug_option,,,,smug_start:Ask about the discreet smuggling operation,
 smugBlurbBar,smug_blurbBar,,,no bar um obscuro $smug_manOrWoman incomoda capitaes desinteressados de naves estelares com um datapad sem marca.,,
 smugOfferOptionBar,smug_optionBar,,,,smug_startBar:Find out what the shady $smug_manOrWoman with the off-brand datapad is bothering people about,
@@ -14150,7 +14345,8 @@ $smug_playerHasEnough",,,smug_deliverContinue:Continue,
 smug_checkCompletionCont,DialogOptionSelected,$option == smug_deliverContinue,"RemoveCommodity $smug_commodityId $smug_quantity
 $market.smug_completed = true 0
 Call $market.smug_ref updateStage","voce ordena que a carga de $smug_commodityName seja deixada em uma doca espacial abandonada longe de olhares indiscretos. seu carro-chefe logo recebera a confirmacao da entrega de um satelite de comunicacao descartavel. 
-OR um transporte de passageiros superficie-orbita convertido para ao longo da orbita do $fleetOrShip depois que voce da o sinal planejado. a carga do $smug_commodityName e rapidamente transferida por robos drones operando sem transponders de navegacao e entao o transporte se afasta.",marketCmd_checkDebtContinue:Continue,
+OR
+ um transporte de passageiros superficie-orbita convertido para ao longo da orbita do $fleetOrShip depois que voce da o sinal planejado. a carga do $smug_commodityName e rapidamente transferida por robos drones operando sem transponders de navegacao e entao o transporte se afasta.",marketCmd_checkDebtContinue:Continue,
 smug_checkCompletionNotSneaking,MarketPostDock,"$market.smug_target score:1000
 $tradeMode != SNEAK
 Call $market.smug_ref updateData
@@ -14754,9 +14950,12 @@ kdQuartermasterAskForKanta,PopulateOptions,"$market.id == kantas_den
 $postId == supplyOfficer
 !$askedForKanta",$askedForKanta = true 1,,"kd_OtherPostTalkToKanta:""I want to talk to Kanta.""",
 kdOtherPostAskKanta,DialogOptionSelected,$option == kd_OtherPostTalkToKanta,FireAll PopulateOptions,"$HeOrShe pisca para voce. ""por que voce esta falando comigo entao? ligue para ela voce mesmo"" $heOrShe diz com uma bufada. 
-OR ""kanta? ha-ha so vou perguntar se ela esta livre."" $HeOrShe deixa isso parado por um momento. ""voce levou uma pancada na cabeca? voce nao apenas - fala - com o senhor da guerra. voce precisa de um bom motivo. de qualquer forma nao depende de mim"" $heOrShe cruza $hisOrHer bracos. ""pergunte ao rei da estacao."" 
-OR ""sim? isso deve ser uma pena porque eu apenas faco a minha parte e se ela quiser alguma coisa alguem me diz. so vai em um sentido."" $HeOrShe recosta-se satisfeito com a explicacao. 
-OR ""fale com o rei da estacao"" $heOrShe diz bruscamente. ""nao cabe a mim dizer quem podera ver a rainha pirata.""",,
+OR
+ ""kanta? ha-ha so vou perguntar se ela esta livre."" $HeOrShe deixa isso parado por um momento. ""voce levou uma pancada na cabeca? voce nao apenas - fala - com o senhor da guerra. voce precisa de um bom motivo. de qualquer forma nao depende de mim"" $heOrShe cruza $hisOrHer bracos. ""pergunte ao rei da estacao."" 
+OR
+ ""sim? isso deve ser uma pena porque eu apenas faco a minha parte e se ela quiser alguma coisa alguem me diz. so vai em um sentido."" $HeOrShe recosta-se satisfeito com a explicacao. 
+OR
+ ""fale com o rei da estacao"" $heOrShe diz bruscamente. ""nao cabe a mim dizer quem podera ver a rainha pirata.""",,
 "# Meeting Warlord Kanta, first time. Options:
 # 1. comms Station King
 # 2. comms Kanta
@@ -15149,8 +15348,10 @@ sunOfficeHuman,DialogOptionSelected,$option == sunOffice_human,,"""sinto muito c
 # defaultLamechGreeting,PickGreeting,$id == lamech score:1000,"ShowPersonVisual
 FireAll PopulateOptions
 SetShortcut cutCommLinkPolite ""ESCAPE""","apos uma breve espera o link de comunicacao se conecta. lamech olha impacientemente para cima de um datapad coberto de colunas de numeros: ""sim? e importante?"" 
-OR apos uma breve espera o link de comunicacao se conecta. uma visualizacao holografica de algum tipo de estrutura de proteina gira na frente de lamech. ""o que e?"" ele diz impacientemente. 
-OR apos uma breve espera o link de comunicacao se conecta. ""estou muito ocupado"" diz lamech atraves de uma mascara de filtragem. ele parece estar usando globos e segurando algum tipo de copo nas maos. ""voce tera que ser rapido.""",cutCommLink:Cut the comm link,
+OR
+ apos uma breve espera o link de comunicacao se conecta. uma visualizacao holografica de algum tipo de estrutura de proteina gira na frente de lamech. ""o que e?"" ele diz impacientemente. 
+OR
+ apos uma breve espera o link de comunicacao se conecta. ""estou muito ocupado"" diz lamech atraves de uma mascara de filtragem. ele parece estar usando globos e segurando algum tipo de copo nas maos. ""voce tera que ser rapido.""",cutCommLink:Cut the comm link,
 ,,,,,,
 "# Tri-Tachyon contact; peace sells, but who's buying?",,,,,,
 ttContactBribeRepPreLock,PopulateOptions,"$faction.id == tritachyon
@@ -17103,7 +17304,8 @@ kpPristineForgeSel,DialogOptionSelected,$option == kpPristineForge,,"""eu... eu 
 kpPristineForgeSel2,DialogOptionSelected,$option == kpPristineForge2,"AddRemoveAnyItem SPECIAL pristine_nanoforge -1
 $player.gavePristineNanoforgeToKanta = true
 KantaCMD gavePristineNanoforge 60","""um presente digno"" sua voz explode. ""o coracao do poder do dominio - arrancado do peito do colosso morto vai bater agora por mim."" suas palavras ecoam dolorosamente nos paineis de metal da camara. ""grandes dentes crescerao! mais uma vez o setor persano aprendera o verdadeiro medo do warl
-ORD."" a corte explode em aplausos e um caos de botas e armas longas se transforma em um canto. ""kan-ta kan-ta"". ela se deleita com seus elogios e sua sede de sangue.",kpLeaveProt:Continue,
+OR
+D."" a corte explode em aplausos e um caos de botas e armas longas se transforma em um canto. ""kan-ta kan-ta"". ela se deleita com seus elogios e sua sede de sangue.",kpLeaveProt:Continue,
 kpKapteynHasForge,MarketPostOpen,"$market.id == station_kapteyn
 $player.gavePristineNanoforgeToKanta score:1000
 KantaCMD kapteynHasForge
@@ -17304,10 +17506,12 @@ plEnforcerAgainSel,DialogOptionSelected,$option == plEnforcerAgain,"RemoveOption
 $askedAboutRecentInspection = true 0","""talvez eles ainda nao tenham apresentado o relatorio ao comando"" diz $heOrShe alegremente. ""com tantos bandidos e contrabandistas ha pouco tempo para acompanhar a burocracia."" ""entao tenho certeza que voce entendera que devo prosseguir com a inspecao."" um toque frio de sorriso um desafio cresce no rosto de $hisOrHer. ""procedimento padrao.""",,
 # Persean League punitive expedition fleet,,,,,,
 plPunExComms,OpenCommLink,$entity.PLPE_fleet score:1000,$entity.ignorePlayerCommRequests = true 7,"as comunicacoes estalam formando uma imagem. ""capitao $playerName"" a liga persa $post olha para voce com hostilidade indisfarcavel. ""voce ja foi um de nos. voce acreditou na construcao de um novo setor juntos."" a voz de $HisOrHer cai: ""eu me pergunto voce ja acreditou ou sempre foi um truque. o que voce poderia ter ganhado que valesse tal traicao aos nossos ideais?"" $HeOrShe faz uma pausa por meio suspiro e em vez de advertir voce toca ainda mais no corte de comunicacao. 
-OR as comunicacoes formam uma imagem e entram em foco. ""pensar que voce ja fez parte da liga"" $heOrShe balanca a cabeca de $hisOrHer em desgosto. ""voce escolheu a barbarie entao lidaremos com voce na unica linguagem que voce conhece: forca bruta."" $HeOrShe faz um sinal abrupto para cortar a comunicacao.",cutCommLinkNoText:Cut the comm link,
+OR
+ as comunicacoes formam uma imagem e entram em foco. ""pensar que voce ja fez parte da liga"" $heOrShe balanca a cabeca de $hisOrHer em desgosto. ""voce escolheu a barbarie entao lidaremos com voce na unica linguagem que voce conhece: forca bruta."" $HeOrShe faz um sinal abrupto para cortar a comunicacao.",cutCommLinkNoText:Cut the comm link,
 plPunExComms2,OpenCommLink,"$entity.PLPE_fleet score:1000
 $player.numTimesLeftLeague >= 2",$entity.ignorePlayerCommRequests = true 7,"as comunicacoes ficam claras. ""nao ha realmente nenhuma razao para eu falar com voce e claro"" diz a liga persiana $post. ""suponho que queria poder dizer que olhei para o seu rosto antes de ser forcado a usar a violencia a servico da liga."" $HeOrShe se aproxima: ""porque diferentemente de voce acredito em honra e dignidade."" $HeOrShe atinge o ponto de corte antes que voce possa responder. 
-OR as comunicacoes ficam claras. ""voce provou ser um violador do juramento duas vezes"" diz a liga persiana $post com escarnio claro na voz de $hisOrHer. $HeOrShe se volta para a propria tripulacao e oficiais de $hisOrHer: ""testemunhe o destino de um bandido novato que ataca os principios da liga!"" $HisOrHer maos caem sinalizando o corte da comunicacao antes que voce possa responder.",cutCommLinkNoText:Cut the comm link,
+OR
+ as comunicacoes ficam claras. ""voce provou ser um violador do juramento duas vezes"" diz a liga persiana $post com escarnio claro na voz de $hisOrHer. $HeOrShe se volta para a propria tripulacao e oficiais de $hisOrHer: ""testemunhe o destino de um bandido novato que ataca os principios da liga!"" $HisOrHer maos caem sinalizando o corte da comunicacao antes que voce possa responder.",cutCommLinkNoText:Cut the comm link,
 "# Persean League blockade fleet, not the Grand Armada",,,,,,
 plBlockaderComms,OpenCommLink,"$entity.PLB_isBlockading score:1000
 !$entity.PLB_armada
@@ -19303,7 +19507,8 @@ $entity.locationId == mayasura
 !$askedMairaath
 RepGTE $faction.id NEUTRAL","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""comunicacoes abertas e recebendo"" diz $Post $name. ""estamos aqui procurando um pedaco perdido dos dias de gloria de mairaath."" 
-OR ""escaneado e identificado. mantendo distancia e rumo."" o $post olha para voce e decide bater um papo. ""fico desanimado ver mairaath assim.""",,
+OR
+ ""escaneado e identificado. mantendo distancia e rumo."" o $post olha para voce e decide bater um papo. ""fico desanimado ver mairaath assim.""",,
 greetingsScavMairaathQ1,PopulateOptions,"$entity.isScavenger
 $sourceMarket.id == mairaath
 $entity.locationId == mayasura
@@ -19314,7 +19519,8 @@ $sourceMarket.id == mairaath
 $entity.locationId == mayasura
 RepGTE $faction.id NEUTRAL","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""comunicacoes abertas e recebendo"" diz $Post $name. ""estamos realizando comercio aqui na rota mairaath. e sim ainda ha algo que vale a pena comprar e vender."" 
-OR ""salve recebido"" diz o $post. ""manter o curso. ainda vale a pena percorrer a rota mairaath e eu faria isso mesmo que nao valesse.""",,
+OR
+ ""salve recebido"" diz o $post. ""manter o curso. ainda vale a pena percorrer a rota mairaath e eu faria isso mesmo que nao valesse.""",,
 greetingsTradeMairaathQ1,PopulateOptions,"$entity.isTradeFleet
 $sourceMarket.id == mairaath
 $entity.locationId == mayasura
